@@ -81,10 +81,15 @@ public class Monster : MonoBehaviour {
         if (!_dead) {
             JumpScare.Instance.Scare();
             _dead = true;
-            SceneHandler.Instance.GameLose();
+            StartCoroutine(Lose());
+            
         }
     }
-
+    private IEnumerator Lose() {
+        yield return new WaitForSeconds(4f);
+        SceneHandler.Instance.GameLose();
+        
+    }
     public void Scare() {
         if(transform.position.z < -20) return;
         transform.position = new Vector3(transform.position.x, transform.position.y, -5);
