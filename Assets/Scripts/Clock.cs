@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class Clock : PlugDevice {
     // Will only show and count time when generator has power
-    public static Clock Instance;
 
     [SerializeField] private TextMeshProUGUI _clockTime;
-    private PlugType _plugType = PlugType.Clock;
+
     public float[] _phoneTimes = new float[3];
 
-    [SerializeField] private GameObject _connectedPrefab;
-    [SerializeField] private GameObject _disconnectedPrefab;
     [SerializeField] private AudioSource _tikTok;
     private GameObject _chiledPrefab;
     private string _previousFormattedTime = "";
@@ -20,36 +17,11 @@ public class Clock : PlugDevice {
     public float currentTime = 58f;
     private bool _hasPower = false;
 
-    private void Awake() {
-        Instance = this;
-        _chiledPrefab = Instantiate(_disconnectedPrefab, transform);
-        Socket.OnOutOfCharge += OnOutOfCharge;
+    protected override void Awake() {
+        base.Awake();
         CreatePhoneTimes();
     }
-    private void OnDestroy() {
-        Socket.OnOutOfCharge -= OnOutOfCharge;
-    }
-
-    private void OnOutOfCharge(PlugType type) {
-        if (type == _plugType) {
-            // I'm effected!
-            _hasPower = false;
-            // Wait until the generator has charge again
-            StartCoroutine(WaitForCharge());
-        }
-    }
-    private IEnumerator WaitForCharge() {
-        while (Generator.Instance.GeneratorCharge <= 0) {
-            if (Socket.Instance.CurrentPlug == PlugType.Empty) {
-                // exit out of whole function
-                yield break;
-            }
-            yield return null;
-        }
-        // Maybe some slow buildup?
-        _hasPower = true;
-    }
-
+  
     private void Update() {
         if(_hasPower) {
             _clockTime.enabled = true;
@@ -79,32 +51,17 @@ public class Clock : PlugDevice {
         
     }
 
-    public override void OnPlugConnected() {
+    protected override void OnActivate() {
         _hasPower = true;
+        base.OnActivate();
     }
 
-    public override void OnPlugDisconnected() {
+    protected override void OnDeactivate() {
         _hasPower = false;
         Phone.Instance.OnPlugDisconnectedPhone();
+        base.OnDeactivate();
     }
 
-    public override void OnPlugClicked() {
-        //Debug.Log("OnCursorClick on" + gameObject.name);
-        // tell Socket to connect
-        if (Socket.Instance.CurrentPlug == _plugType) {
-            // You are already connected, disconnect?
-            Socket.Instance.CurrentPlug = PlugType.Empty;
-            Destroy(_chiledPrefab);
-            _chiledPrefab = Instantiate(_disconnectedPrefab, transform);
-            OnPlugDisconnected();
-        } else if (Socket.Instance.CurrentPlug == PlugType.Empty) {
-            // Connect!
-            Socket.Instance.CurrentPlug = _plugType;
-            Destroy(_chiledPrefab);
-            _chiledPrefab = Instantiate(_connectedPrefab, transform);
-            OnPlugConnected();
-        }
-    }
 
 
     private void CreatePhoneTimes() {
@@ -118,8 +75,4 @@ public class Clock : PlugDevice {
     }
 
     public bool GetHasPower() => _hasPower;
-
-
-
-
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,13 +7,17 @@ public class Generator : MonoBehaviour {
     [SerializeField] private Slider _chargeSlider;
     [SerializeField] private AudioSource _turnOff;
     [SerializeField] private AudioSource _turnOn;
+    [SerializeField] private float _dischargeRate = 1.0f;
     public AudioSource Rotating;
     private GameObject _lampLight;
     private GameObject _lampBulb;
 
-    private float generatorCharge = 50;
+    public static event Action<bool> GeneratorStatus;
+
+    private float generatorCharge = 10;
     private bool _turnOffPlayed;
     private bool _turnOnPlayed;
+    private bool _previousPower = true;
 
     public float GeneratorCharge {
         get { return generatorCharge; }
@@ -33,7 +38,7 @@ public class Generator : MonoBehaviour {
 
     }
 
-    private void Update() {
+    private void FixedUpdate() {
         if(generatorCharge<=0) {
             // Out of charge! Turn off the lamp
             _lampBulb.GetComponent<Renderer>().material.SetColor("_Color", Color.black);
@@ -43,6 +48,11 @@ public class Generator : MonoBehaviour {
                 _turnOff.Play();
                 _turnOffPlayed = true;
             }
+            // Ensure we only invoke once
+            if(_previousPower) {
+                GeneratorStatus?.Invoke(false);
+                _previousPower = false;
+            }   
         } else {
             // On
             _lampBulb.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
@@ -52,6 +62,14 @@ public class Generator : MonoBehaviour {
                 _turnOnPlayed = true;
                 _turnOn.Play();
             }
+
+            // Ensure we only invoke once
+            if (!_previousPower) {
+                GeneratorStatus?.Invoke(true);
+                _previousPower = true;
+            }
+            // Drain power when there is a socket connection
+            if(Socket.Instance.CurrentPlug != PlugType.Empty) GeneratorCharge -= _dischargeRate * 0.02f;
         }
     }
 

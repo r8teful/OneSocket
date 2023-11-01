@@ -620,6 +620,7 @@ MonoBehaviour:
   _chargeSlider: {fileID: 1854335492}
   _turnOff: {fileID: 70353154}
   _turnOn: {fileID: 70353155}
+  _dischargeRate: 2
   Rotating: {fileID: 70353153}
 --- !u!164 &70353152
 AudioReverbFilter:
@@ -2238,13 +2239,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 370f6997ff07d2b4f8644ed529f63194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plugType: 0
+  connectedPrefab: {fileID: 433496873958846609, guid: ee5e3035c4af4fa448e6164b3d109e3b, type: 3}
+  disconnectedPrefab: {fileID: 2795578289529833056, guid: da4bd7dbb8c772f4fbf527594b95ae34, type: 3}
   _clockTime: {fileID: 500521323}
   _phoneTimes:
   - 0
   - 0
   - 0
-  _connectedPrefab: {fileID: 433496873958846609, guid: ee5e3035c4af4fa448e6164b3d109e3b, type: 3}
-  _disconnectedPrefab: {fileID: 2795578289529833056, guid: da4bd7dbb8c772f4fbf527594b95ae34, type: 3}
   _tikTok: {fileID: 288382209}
   currentTime: 0
 --- !u!164 &288382208
@@ -7385,7 +7387,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8095350bad69634681295f91737caa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dischargeRate: 3
   _audioSource: {fileID: 970279813}
   _plugIn: {fileID: 8300000, guid: 3f2b29c52d6fdbc47b9f4a0c433639a1, type: 3}
   _plugOut: {fileID: 8300000, guid: 776a0c80f405d9445962c20d5592abf9, type: 3}
@@ -8227,9 +8228,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e75e743cda75784aab8cfb0e8b09ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plugType: 0
-  _connectedPrefab: {fileID: 7655173430477377993, guid: 67d66ace7e255b0479031ae7c9e19d6b, type: 3}
-  _disconnectedPrefab: {fileID: 2171505106177261996, guid: f1b6cb1f6757a804a90adb696f3775c3, type: 3}
+  plugType: 0
+  connectedPrefab: {fileID: 7655173430477377993, guid: 67d66ace7e255b0479031ae7c9e19d6b, type: 3}
+  disconnectedPrefab: {fileID: 2171505106177261996, guid: f1b6cb1f6757a804a90adb696f3775c3, type: 3}
 --- !u!4 &1109945712
 Transform:
   m_ObjectHideFlags: 0
@@ -15143,9 +15144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e75e743cda75784aab8cfb0e8b09ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plugType: 1
-  _connectedPrefab: {fileID: 4522976010250469690, guid: f83b5537e4d51794da5269b6df7ac28e, type: 3}
-  _disconnectedPrefab: {fileID: 623290103094519508, guid: 6bcf1163ed4e5a54895c335f491a4e78, type: 3}
+  plugType: 0
+  connectedPrefab: {fileID: 4522976010250469690, guid: f83b5537e4d51794da5269b6df7ac28e, type: 3}
+  disconnectedPrefab: {fileID: 623290103094519508, guid: 6bcf1163ed4e5a54895c335f491a4e78, type: 3}
 --- !u!4 &1911996905
 Transform:
   m_ObjectHideFlags: 0
@@ -15389,9 +15390,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017612bc9bfb3ef4db13171ab9e7d9ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plugType: 2
-  _connectedPrefab: {fileID: 8920394710513615273, guid: da5162624658a2d4e931ac811d19b571, type: 3}
-  _disconnectedPrefab: {fileID: 8027906546211635580, guid: 5869cb83dc3805d4680503b5ef799462, type: 3}
+  plugType: 0
+  connectedPrefab: {fileID: 8920394710513615273, guid: da5162624658a2d4e931ac811d19b571, type: 3}
+  disconnectedPrefab: {fileID: 8027906546211635580, guid: 5869cb83dc3805d4680503b5ef799462, type: 3}
   _chargesText: {fileID: 476866792}
   _audioSource: {fileID: 1945293307}
 --- !u!4 &1945293305

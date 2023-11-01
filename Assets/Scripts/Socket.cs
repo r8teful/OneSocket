@@ -4,8 +4,6 @@ using UnityEngine;
 public class Socket : MonoBehaviour {
 
     public static Socket Instance;
-    [SerializeField] private float _dischargeRate = 1.0f;
-    public static event Action<PlugType> OnOutOfCharge;
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _plugIn;
     [SerializeField] private AudioClip _plugOut;
@@ -33,16 +31,4 @@ public class Socket : MonoBehaviour {
 
         } }
     // public int[] Code { get { return _code; } private set { _code = value; }}
-
-    private void FixedUpdate() {
-        // Take charge off the generator aslong as there is something connected to the socket
-        if(CurrentPlug != PlugType.Empty && Generator.Instance.GeneratorCharge > 0) {
-            Generator.Instance.GeneratorCharge -= _dischargeRate * 0.02f;
-        } else if (Generator.Instance.GeneratorCharge <= 0) {
-            //Debug.Log("No more charge!");
-            OnOutOfCharge?.Invoke(CurrentPlug);
-
-        }
-    }
-
 }

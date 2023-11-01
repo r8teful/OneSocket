@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Phone : PlugDevice {
+public class Phone : Interactable {
     // Has charge as long as clock is connected
     public enum PhoneStatedCode {
         None,
@@ -32,7 +32,7 @@ public class Phone : PlugDevice {
 
     private void Awake() {
         Instance = this;
-        Socket.OnOutOfCharge += OnOutOfCharge;
+      //  Generator.GeneratorStatus += OnOutOfCharge;
 
         if (_code == null || _code.Length != 3) {
             _code = new int[3];
@@ -43,20 +43,20 @@ public class Phone : PlugDevice {
         }
     }
 
-   
-    private void OnDestroy() {
-        Socket.OnOutOfCharge -= OnOutOfCharge;
-    }
+   //TODO Will be broken
+   // private void OnDestroy() {
+   //     Socket.GeneratorStatus -= OnOutOfCharge;
+   // }
 
-    private void OnOutOfCharge(PlugType type) {
-        if (type == PlugType.Clock && _phoneCallState.Equals(PhoneCallState.Ringing)) {
-            // I'm effected!
-            StopRing();
-            // Wait until the generator has charge again
-            StartCoroutine(WaitForCharge());
-        }
+   // private void OnOutOfCharge(bool b) {
+   //     if (type == PlugType.Clock && _phoneCallState.Equals(PhoneCallState.Ringing)) {
+   //        // I'm effected!
+   //         StopRing();
+   //         // Wait until the generator has charge again
+   //         StartCoroutine(WaitForCharge());
+   //     }
 
-    }
+   // }
 
     private IEnumerator WaitForCharge() {
         while (Generator.Instance.GeneratorCharge <= 0) {
@@ -90,7 +90,7 @@ public class Phone : PlugDevice {
         // Maybe some slow buildup?
         Ring();
     }
-    public override void OnPlugClicked() {
+    protected override void OnMouseDown() {
         Debug.Log("Clicked on Phone");
         if(_canInteract) {
             // pickup phone don't care about sound
