@@ -1,9 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Socket : Interactable {
+public class Socket : MonoBehaviour {
 
     public static Socket Instance;
     [SerializeField] private float _dischargeRate = 1.0f;

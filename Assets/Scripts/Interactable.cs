@@ -1,18 +1,17 @@
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
 
-public class Interactable : MonoBehaviour {
+// By using the protected abstract combination, we are creating a contract that enforces the implementation
+// of these methods in any class derived from Interactable,
 
-    private Color _defaultColor = new Color(1.0f, 0.72f, 0.87f, 1.0f); // 
-
-    public virtual void OnCursorEnter() { 
-        //var hand = FindObjectOfType(typeof(FollowCursor));
-        //hand.GetComponent<Renderer>().material.SetColor("_Color", Color.white);
+public abstract class Interactable : MonoBehaviour {
+    protected virtual void OnMouseEnter(){
+        CursorManager.Instance.SetCursorClickable();
     }
-    public virtual void OnCursorExit() {
 
-       // var hand = FindObjectOfType(typeof(FollowCursor));
-      //  hand.GetComponent<Renderer>().material.SetColor("_Color", _defaultColor);
+    protected virtual void OnMouseExit() {
+        CursorManager.Instance.SetCursorDefault();
     }
-    public virtual void OnCursorClick() { }
+
+    protected abstract void OnMouseDown();
 }

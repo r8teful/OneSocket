@@ -1,9 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Generator : Interactable {
-
-
+public class Generator : MonoBehaviour {
     public static Generator Instance;
     [SerializeField] private Slider _chargeSlider;
     [SerializeField] private AudioSource _turnOff;
@@ -56,4 +54,5 @@ public class Generator : Interactable {
             }
         }
     }
+
 }

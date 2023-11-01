@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -90,7 +88,7 @@ public class Clock : PlugDevice {
         Phone.Instance.OnPlugDisconnectedPhone();
     }
 
-    public override void OnCursorClick() {
+    public override void OnPlugClicked() {
         //Debug.Log("OnCursorClick on" + gameObject.name);
         // tell Socket to connect
         if (Socket.Instance.CurrentPlug == _plugType) {

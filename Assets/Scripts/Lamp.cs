@@ -69,7 +69,7 @@ public class Lamp : PlugDevice {
         _bulb.GetComponentInChildren<Light>().enabled = true;
     }
 
-    public override void OnCursorClick() {
+    public override void OnPlugClicked() {
         //Debug.Log("OnCursorClick on" + gameObject.name);
         // tell Socket to connect
         if (Socket.Instance.CurrentPlug == _plugType) {
@@ -87,5 +87,4 @@ public class Lamp : PlugDevice {
             OnPlugConnected();
         }
     }
-
 }

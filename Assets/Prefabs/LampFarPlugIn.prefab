@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4522976009606711813}
   - component: {fileID: 4522976009606711815}
   - component: {fileID: 4522976009606711812}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cylinder (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4522976009970519590}
   - component: {fileID: 4522976009970519584}
   - component: {fileID: 4522976009970519585}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cylinder (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 4522976010076595996}
   - component: {fileID: 4522976010076595998}
   - component: {fileID: 4522976010076595999}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cylinder (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 4522976010224322208}
   - component: {fileID: 4522976010224322210}
   - component: {fileID: 4522976010224322211}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 4522976010250469685}
   - component: {fileID: 4090346220081732354}
   - component: {fileID: 2592159658467219635}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: LampFarPlugIn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 4522976011104102878}
   - component: {fileID: 4522976011104102872}
   - component: {fileID: 4522976011104102873}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 4522976011317336518}
   - component: {fileID: 4522976011317336512}
   - component: {fileID: 4522976011317336513}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cylinder (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -577,7 +577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6618227832603024585}
   - component: {fileID: 1546866960944018493}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,8 +592,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6828129811485888148}
   m_LocalRotation: {x: -0, y: 0.18031484, z: -0, w: 0.98360896}
-  m_LocalPosition: {x: 0.18, y: -1.98, z: -0.929}
-  m_LocalScale: {x: 1, y: 1, z: 3.3816}
+  m_LocalPosition: {x: 0.02, y: -1.98, z: -0.87}
+  m_LocalScale: {x: 1.336, y: 1, z: 3.3816}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4522976010250469685}
@@ -622,7 +622,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8311624865305643690}
   - component: {fileID: 6772962781790458205}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Collider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -637,8 +637,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8307744039882718499}
   m_LocalRotation: {x: -0, y: 0.22286677, z: -0, w: 0.9748489}
-  m_LocalPosition: {x: -1.199, y: -1.98, z: -3.941}
-  m_LocalScale: {x: 0.68825, y: 1, z: 3.3816}
+  m_LocalPosition: {x: -1.199, y: -1.708, z: -3.941}
+  m_LocalScale: {x: 1.0963135, y: 1, z: 3.7541306}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4522976010250469685}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2171505105929195184}
   - component: {fileID: 2171505105929195190}
   - component: {fileID: 2171505105929195191}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cylinder (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 2171505106066466698}
   - component: {fileID: 2171505106066466696}
   - component: {fileID: 2171505106066466697}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cylinder (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 2171505106177261987}
   - component: {fileID: 1740006713540877204}
   - component: {fileID: 224997108627413029}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: LampClosePlugOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 2171505106187159094}
   - component: {fileID: 2171505106187159092}
   - component: {fileID: 2171505106187159093}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 2171505106670553747}
   - component: {fileID: 2171505106670553745}
   - component: {fileID: 2171505106670553746}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cylinder (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 2171505107242162512}
   - component: {fileID: 2171505107242162518}
   - component: {fileID: 2171505107242162519}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cylinder (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,7 +499,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6034462942767581756}
   - component: {fileID: 9013971249109176779}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Collider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -513,14 +513,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6029585308048211381}
-  m_LocalRotation: {x: -0, y: -0.08770385, z: -0, w: 0.9961467}
-  m_LocalPosition: {x: -0.336, y: -1.98, z: -3.506}
-  m_LocalScale: {x: 0.5717086, y: 1, z: 2.000791}
+  m_LocalRotation: {x: -0, y: 0.0051476657, z: -0, w: 0.99998677}
+  m_LocalPosition: {x: -0.362, y: -1.98, z: -3.528}
+  m_LocalScale: {x: 0.7768948, y: 1, z: 2.5894237}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2171505106177261987}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: -10.063, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0.59, z: 0}
 --- !u!65 &9013971249109176779
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -545,7 +545,7 @@ GameObject:
   - component: {fileID: 7925253656913276914}
   - component: {fileID: 7925253656913276912}
   - component: {fileID: 7925253656913276915}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cylinder (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -628,7 +628,7 @@ GameObject:
   - component: {fileID: 7925253657419271249}
   - component: {fileID: 7925253657419271263}
   - component: {fileID: 7925253657419271262}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cylinder (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -711,7 +711,7 @@ GameObject:
   - component: {fileID: 7925253657452206197}
   - component: {fileID: 7925253657452206195}
   - component: {fileID: 7925253657452206194}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cylinder (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -794,7 +794,7 @@ GameObject:
   - component: {fileID: 7925253657842496893}
   - component: {fileID: 7925253657842496891}
   - component: {fileID: 7925253657842496890}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cylinder (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -876,7 +876,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7925253657949435533}
   - component: {fileID: 7925253657949435530}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Collider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -891,8 +891,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7925253657949435532}
   m_LocalRotation: {x: -0, y: 0.53058684, z: -0, w: 0.8476306}
-  m_LocalPosition: {x: -0.955, y: -1.98, z: -4.962}
-  m_LocalScale: {x: 0.44888273, y: 1, z: 1.5508732}
+  m_LocalPosition: {x: -1.009, y: -1.861, z: -4.851}
+  m_LocalScale: {x: 0.6983268, y: 1, z: 1.5508732}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2171505106177261987}
@@ -922,7 +922,7 @@ GameObject:
   - component: {fileID: 7925253658659332365}
   - component: {fileID: 7925253658659332363}
   - component: {fileID: 7925253658659332362}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cylinder (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1005,7 +1005,7 @@ GameObject:
   - component: {fileID: 7925253658765343155}
   - component: {fileID: 7925253658765343153}
   - component: {fileID: 7925253658765343152}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cylinder (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -4441,7 +4441,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483436883}
   m_LocalRotation: {x: -0, y: -0.089758836, z: -0, w: 0.9959635}
-  m_LocalPosition: {x: 0, y: 0, z: -792}
+  m_LocalPosition: {x: 0, y: 0, z: -800}
   m_LocalScale: {x: 10.944219, y: 15.869458, z: 29.29607}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4450,7 +4450,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -10.299, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -1700, y: -3662}
+  m_AnchoredPosition: {x: -1728, y: -4191}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &483436885
@@ -4473,7 +4473,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Interact with left mouse button
+  m_text: 'Interact with left mouse button
+
+    click on this box to continue the
+    tutorial'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4500,8 +4503,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 98.3
-  m_fontSizeBase: 98.3
+  m_fontSize: 53.8
+  m_fontSizeBase: 53.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4536,7 +4539,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 20.541515, z: -824.4026, w: -279.6674}
+  m_margin: {x: 105.12439, y: 20.541515, z: -729.98895, w: -166.40845}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

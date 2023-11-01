@@ -1,7 +1,4 @@
-using Mono.Cecil.Cil;
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Phone : PlugDevice {
@@ -93,7 +90,7 @@ public class Phone : PlugDevice {
         // Maybe some slow buildup?
         Ring();
     }
-    public override void OnCursorClick() {
+    public override void OnPlugClicked() {
         Debug.Log("Clicked on Phone");
         if(_canInteract) {
             // pickup phone don't care about sound

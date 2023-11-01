@@ -1,5 +1,3 @@
-
-using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -56,7 +54,7 @@ public class Speaker : PlugDevice {
     }
 
 
-    public override void OnCursorClick() {
+    public override void OnPlugClicked() {
         //Debug.Log("OnCursorClick on" + gameObject.name);
         // tell Socket to connect
         if (Socket.Instance.CurrentPlug == PlugType.Empty && _charges <= 0) return;

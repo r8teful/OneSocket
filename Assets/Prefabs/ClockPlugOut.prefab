@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7747696157572030074}
   - component: {fileID: 8560141926396707694}
   - component: {fileID: -4751899938104093234}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: ClockPlugOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 7323240101142088215}
   - component: {fileID: 8708780906876249252}
   - component: {fileID: 4069362208166790949}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7150183445761499349}
   - component: {fileID: 391777154510306977}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Collider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,8 +177,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3467399540470867885}
   m_LocalRotation: {x: -0, y: -0.18785818, z: -0, w: 0.9821962}
-  m_LocalPosition: {x: 1.06, y: 0, z: -1.304}
-  m_LocalScale: {x: 0.41664, y: 0.41664, z: 1.258253}
+  m_LocalPosition: {x: 1.099, y: -0.279, z: -1.433}
+  m_LocalScale: {x: 2.4302576, y: 0.7621596, z: 1.6079215}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7747696157572030074}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 5141397862773724360}
   - component: {fileID: 290498834699184391}
   - component: {fileID: 743052842904772699}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cylinder (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1233019685003286452}
   - component: {fileID: 5041206535425779407}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,14 +304,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5460640931728104273}
-  m_LocalRotation: {x: -0, y: 0.060963765, z: -0, w: 0.99814}
-  m_LocalPosition: {x: 1.057, y: 0, z: -0.117}
-  m_LocalScale: {x: 0.41664, y: 0.41664, z: 1.258253}
+  m_LocalRotation: {x: -0, y: -0.012538148, z: -0, w: 0.9999214}
+  m_LocalPosition: {x: 1.057, y: -0.149, z: -0.117}
+  m_LocalScale: {x: 1.6021799, y: 0.7809084, z: 1.258253}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7747696157572030074}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 6.99, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -1.437, z: 0}
 --- !u!65 &5041206535425779407
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 3443210897384018286}
   - component: {fileID: 4344915359416706762}
   - component: {fileID: 63012403415465719}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cylinder (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: 7750132926159061185}
   - component: {fileID: 8076058535961788757}
   - component: {fileID: 3275963261313912012}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -502,7 +502,7 @@ GameObject:
   - component: {fileID: 8129739293183911963}
   - component: {fileID: 5181044435166316708}
   - component: {fileID: 7862607233631462470}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cylinder (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 7381894065843453318}
   - component: {fileID: 6286254757694672348}
   - component: {fileID: 3149073311126471057}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

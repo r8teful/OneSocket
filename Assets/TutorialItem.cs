@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TutorialItem : MonoBehaviour
 {
     private bool _isInsideTrigger;
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnMouseEnter(Collider other) {
         _isInsideTrigger = true;
     }
 
-    private void OnTriggerExit(Collider other) {
+    private void OnMouseExit(Collider other) {
         _isInsideTrigger = false;
     }
 
