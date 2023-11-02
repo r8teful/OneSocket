@@ -7,7 +7,6 @@ public class ClickArea : Interactable {
         _parentScript = GetComponentInParent<PlugDevice>();
     }
 
-
     protected override void OnMouseDown() {
         _parentScript.OnPlugClicked();
     }

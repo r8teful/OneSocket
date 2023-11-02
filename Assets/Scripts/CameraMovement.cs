@@ -21,7 +21,7 @@ public class CameraMovement : MonoBehaviour {
 
 
     private void FixedUpdate() {
-        transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, _speed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, _targetRotation, _speed * Time.deltaTime);
     }
 
 

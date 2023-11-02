@@ -5,7 +5,6 @@ public class Lamp : PlugDevice {
 
     private Light _light;
     private GameObject _bulb;
-    private GameObject _childPrefab;
     private Color _lightOnColor = new Color(1, 0.9192954f, 0.6556604f, 1.0f);
 
 

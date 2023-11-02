@@ -10,7 +10,6 @@ public class Clock : PlugDevice {
     public float[] _phoneTimes = new float[3];
 
     [SerializeField] private AudioSource _tikTok;
-    private GameObject _chiledPrefab;
     private string _previousFormattedTime = "";
 
 

@@ -25,12 +25,8 @@ public abstract class PlugDevice : MonoBehaviour {
     }
 
     protected virtual void OnDeactivate() {
-        //StopAllCoroutines();
-        //StartCoroutine(WaitForPower());
     }
     protected virtual void OnActivate() {
-       // StopAllCoroutines();
-       // StartCoroutine(WaitForDisruption());
     }
     public virtual void OnPlugClicked() {
         if (Socket.Instance.CurrentPlug == plugType) {
@@ -59,21 +55,4 @@ public abstract class PlugDevice : MonoBehaviour {
             OnDeactivate();
         }
     }
-
-    /*
-    protected IEnumerator WaitForDisruption() {
-        yield return new WaitUntil(() => !HasPower);
-        OnDeactivate();
-    }
-    private IEnumerator WaitForPower() {
-        while (!HasPower) {
-            if (Socket.Instance.CurrentPlug == PlugType.Empty) {
-                // exit out of whole function
-                yield break;
-            }
-            yield return null;
-        }
-        OnActivate();
-    }*/
-
 }
