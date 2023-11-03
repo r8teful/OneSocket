@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf713cdac54d124eb2f2846d35bc218, type: 3}
+  m_Name: TestSequence
+  m_EditorClassIdentifier: 
+  interruptBehaviour: 2
+  lines:
+  - Hi there, [w:2] I am saying something [w:1]
+  - '[t:4] NOW IM SAYING IT FAST[w:1]'
+  - '[t:10] Slower now, [w:2][t:25] very slow... [w:2]'

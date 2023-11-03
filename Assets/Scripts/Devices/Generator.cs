@@ -18,6 +18,7 @@ public class Generator : MonoBehaviour {
     private bool _turnOffPlayed;
     private bool _turnOnPlayed;
     private bool _previousPower = true;
+    private bool _firstTime =true;
 
     public float GeneratorCharge {
         get { return generatorCharge; }
@@ -60,6 +61,10 @@ public class Generator : MonoBehaviour {
             _turnOffPlayed = false;
             if (!_turnOnPlayed && !_turnOn.isPlaying) {
                 _turnOnPlayed = true;
+                if (_firstTime) { 
+                    _firstTime = false;
+                    return; 
+                }
                 _turnOn.Play();
             }
 

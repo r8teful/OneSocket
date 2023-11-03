@@ -7,6 +7,8 @@ public class Socket : MonoBehaviour {
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _plugIn;
     [SerializeField] private AudioClip _plugOut;
+    private bool _firstTime = true;
+
     private void Awake() {
         Instance = this;
         CurrentPlug = PlugType.Empty;
@@ -22,6 +24,10 @@ public class Socket : MonoBehaviour {
     public PlugType CurrentPlug { get { return _currentPlug; } set { _currentPlug = value;
             Debug.Log("Setting plug to: " + _currentPlug);
             if (_currentPlug.Equals(PlugType.Empty)) {
+                if (_firstTime) { 
+                    _firstTime = false; 
+                    return;
+                }
                 _audioSource.clip = _plugOut;
                 _audioSource.Play();
             } else {

@@ -59,7 +59,7 @@ public class AudioController : MonoBehaviour
         transform.parent = null;
         DontDestroyOnLoad(gameObject);
 
-        foreach (object o in Resources.LoadAll("Audio/SFX"))
+        foreach (object o in Resources.LoadAll("Audio/SoundEffects"))
         {
             sfx.Add((AudioClip)o);
         }

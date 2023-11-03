@@ -11,9 +11,6 @@ public class DialogueManager : Singleton<DialogueManager> {
     [SerializeField]
     private DialogueText dialogueText = default;
 
-    [SerializeField]
-    private DialogueEventSO resumeLines = default;
-
     private Stack<DialogueEventSO> eventStack = new Stack<DialogueEventSO>();
     private List<DialogueEventSO> playedEvents = new List<DialogueEventSO>();
 
@@ -41,19 +38,10 @@ public class DialogueManager : Singleton<DialogueManager> {
         for (int i = 0; i < dialogueEvent.lines.Count; i++) {
             if (eventStack.Peek() != dialogueEvent) {
                 yield return new WaitWhile(() => eventStack.Peek() != dialogueEvent);
-
-                switch (dialogueEvent.interruptBehaviour) {
-                    case DialogueEventSO.InterruptBehaviour.Skip:
-                        continueToNextLine = false;
-                        break;
-                    case DialogueEventSO.InterruptBehaviour.ResumeAfter:
-                        i = Mathf.Max(i - 1, 0);
-                        dialogueText.PlayMessage(resumeLines.lines[Random.Range(0, resumeLines.lines.Count)]);
-                        yield return new WaitUntil(() => !dialogueText.PlayingMessage);
-                        break;
+                if(dialogueEvent.interruptBehaviour.Equals(DialogueEventSO.InterruptBehaviour.Skip)) {
+                    continueToNextLine = false;
                 }
             }
-
             var line = dialogueEvent.lines[i];
             if (continueToNextLine) {
                 dialogueText.PlayMessage(line);
@@ -72,9 +60,12 @@ public class DialogueManager : Singleton<DialogueManager> {
         }
     }
     private void OnDisplayCharacter(string message, int index) {
-        //mouth.ToggleOpen();
-        AudioController.Instance.PlaySound2D("buddy_voice_1", pitch: new AudioParams.Pitch(AudioParams.Pitch.Variation.VerySmall),
-            repetition: new AudioParams.Repetition(0.075f));
+        string[] vowels = { "A", "I", "O", "E", "U" };
+        int randomIndex = Random.Range(0, vowels.Length);
+        string selectedVowel = vowels[randomIndex];
+
+        AudioController.Instance.PlaySound2D(selectedVowel, pitch: new AudioParams.Pitch(AudioParams.Pitch.Variation.VerySmall), 
+            repetition: new AudioParams.Repetition(0.075f*4));
     }
 
     /*

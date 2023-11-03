@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class DialogueText : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class DialogueText : MonoBehaviour
 
     [SerializeField]
     private Text uiText = default;
+    [SerializeField]
+    private Canvas PixelText = default;
 
     private List<Text> spawnedLetters = new List<Text>();
 
@@ -47,7 +50,7 @@ public class DialogueText : MonoBehaviour
 
         if (Active)
         {
-           // StartCoroutine(PlayMessageSequence(message.Replace("#NAME#", BuddyNameGenerator.GetName()).Replace("#LEVEL#", GameStatus.buddyLevel.ToString())));
+           StartCoroutine(PlayMessageSequence(message));
         }
     }
 
@@ -82,7 +85,7 @@ public class DialogueText : MonoBehaviour
         Canvas.ForceUpdateCanvases();
 
         int index = 0;
-        foreach (var pair in CustomUI.GetTextLetterPositions(uiText))
+        foreach (var pair in CustomUI.GetTextLetterPositions(uiText,-2))
         {
             spawnedLetters.Add(SpawnLetter(pair.Value, pair.Key, index));
             index++;
@@ -92,11 +95,16 @@ public class DialogueText : MonoBehaviour
         uiText.text = "";
     }
 
-    private Text SpawnLetter(char c, Vector3 pos, int index)
-    {
+    private Text SpawnLetter(char c, Vector3 pos, int index) {
+        RectTransform uiTextRect = uiText.GetComponent<RectTransform>();
+
+
+        Vector2 position = uiTextRect.anchoredPosition; // anchor has to be in the CENTRE
+
         pos.x = Mathf.Round(pos.x * 100) / 100;
-        pos.y = transform.position.y;
-        
+        pos.y = PixelText.transform.TransformPoint(position).y;
+
+
         var obj = new GameObject(c.ToString());
         obj.transform.SetParent(uiText.transform.parent);
         obj.transform.position = pos;
@@ -111,7 +119,7 @@ public class DialogueText : MonoBehaviour
         letter.alignment = TextAnchor.MiddleCenter;
         letter.raycastTarget = false;
         letter.color = currentColor;
-    
+
         return letter;
     }
 

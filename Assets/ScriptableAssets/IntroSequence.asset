@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf713cdac54d124eb2f2846d35bc218, type: 3}
+  m_Name: IntroSequence
+  m_EditorClassIdentifier: 
+  interruptBehaviour: 0
+  lines:
+  - Hello?[w:1] Can you hear me? [w:1]
+  - "Listen, [w:0.5] I don\u2019t have much time to explain [w:1]"
+  - "I\u2019m the one who put you in this room [w:1]"
+  - "It\u2019s part of an experiment [w:1]"
+  - "Don\u2019t worry,[w:0.5] I\u2019m not going to hurt you [w:1]"
