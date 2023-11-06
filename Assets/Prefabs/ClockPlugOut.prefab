@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -4751899938104093234}
   m_Layer: 0
   m_Name: ClockPlugOut
-  m_TagString: Untagged
+  m_TagString: Clock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

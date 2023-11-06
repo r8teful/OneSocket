@@ -1,16 +1,15 @@
 using System;
 using UnityEngine;
 
-public class Socket : MonoBehaviour {
+public class Socket : StaticInstance<Socket> {
 
-    public static Socket Instance;
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _plugIn;
     [SerializeField] private AudioClip _plugOut;
     private bool _firstTime = true;
 
-    private void Awake() {
-        Instance = this;
+    protected override void Awake() {
+        base.Awake();
         CurrentPlug = PlugType.Empty;
     }
     // need a private PlugType currentPlug;
@@ -20,6 +19,7 @@ public class Socket : MonoBehaviour {
     //        // other shit
     //    }
     //}
+    [SerializeField]
     private PlugType _currentPlug;
     public PlugType CurrentPlug { get { return _currentPlug; } set { _currentPlug = value;
             Debug.Log("Setting plug to: " + _currentPlug);

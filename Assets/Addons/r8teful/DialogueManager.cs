@@ -11,7 +11,7 @@ public class DialogueManager : Singleton<DialogueManager> {
     [SerializeField]
     private DialogueText dialogueText = default;
 
-    private Stack<DialogueEventSO> eventStack = new Stack<DialogueEventSO>();
+    public Stack<DialogueEventSO> eventStack = new Stack<DialogueEventSO>();
     private List<DialogueEventSO> playedEvents = new List<DialogueEventSO>();
 
     private void Start() {
@@ -60,7 +60,7 @@ public class DialogueManager : Singleton<DialogueManager> {
         }
     }
     private void OnDisplayCharacter(string message, int index) {
-        string[] vowels = { "A", "I", "O", "E", "U" };
+        string[] vowels = { "Am", "Im", "Om", "Em", "Um" };
         int randomIndex = Random.Range(0, vowels.Length);
         string selectedVowel = vowels[randomIndex];
 

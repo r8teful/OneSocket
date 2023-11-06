@@ -1,7 +1,6 @@
 using UnityEngine;
 
-public class CameraMovement : MonoBehaviour {
-    public static CameraMovement Instance;
+public class CameraMovement : StaticInstance<CameraMovement> {
 
     public CameraState LookState = CameraState.Room;
     [SerializeField] private Transform generatorPosition;
@@ -11,9 +10,6 @@ public class CameraMovement : MonoBehaviour {
     [SerializeField] private float _speed;
     private Quaternion _targetRotation;
 
-    private void Awake() {
-        Instance = this;
-    }
 
     private void Start() {
         MoveCamera();

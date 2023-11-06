@@ -7,40 +7,44 @@ public class Generator : MonoBehaviour {
     [SerializeField] private Slider _chargeSlider;
     [SerializeField] private AudioSource _turnOff;
     [SerializeField] private AudioSource _turnOn;
-    [SerializeField] private float _dischargeRate = 1.0f;
+    [SerializeField] private float _dischargeRate = 0.1f;
+     private float _previousdischargeRate;
     public AudioSource Rotating;
     private GameObject _lampLight;
     private GameObject _lampBulb;
 
     public static event Action<bool> GeneratorStatus;
 
-    private float generatorCharge = 10;
+    private float _generatorCharge = 20f;
+    private float _generatorChargeMax = 100;
     private bool _turnOffPlayed;
     private bool _turnOnPlayed;
     private bool _previousPower = true;
     private bool _firstTime =true;
 
     public float GeneratorCharge {
-        get { return generatorCharge; }
+        get { return _generatorCharge; }
         set {
-            if (generatorCharge != value) {
-                generatorCharge = value;
-                _chargeSlider.value = generatorCharge/100;
+            if (_generatorCharge != value) {
+                _generatorCharge = value;
+                _chargeSlider.value = _generatorCharge/100;
             }
         }
     }
 
+    public bool IsMaxCharge { get { return _generatorCharge >= _generatorChargeMax; }}
+
     private void Awake() {
         Instance = this;
-        GeneratorCharge = generatorCharge;
-
+        GeneratorCharge = _generatorCharge;
         _lampLight = transform.GetChild(0).gameObject;
         _lampBulb = transform.GetChild(0).GetChild(0).gameObject;
-
     }
-
+    private void Start() {
+        _chargeSlider.value = _generatorCharge / 100;
+    }
     private void FixedUpdate() {
-        if(generatorCharge<=0) {
+        if(_generatorCharge<=0) {
             // Out of charge! Turn off the lamp
             _lampBulb.GetComponent<Renderer>().material.SetColor("_Color", Color.black);
             _lampLight.GetComponent<Light>().enabled = false;
@@ -77,5 +81,11 @@ public class Generator : MonoBehaviour {
             if(Socket.Instance.CurrentPlug != PlugType.Empty) GeneratorCharge -= _dischargeRate * 0.02f;
         }
     }
-
+    public void DissableDischarge() {
+        _previousdischargeRate = _dischargeRate;
+        _dischargeRate = 0;
+    }
+    public void EnableDischarge() {
+        _dischargeRate = _previousdischargeRate; 
+    }
 }

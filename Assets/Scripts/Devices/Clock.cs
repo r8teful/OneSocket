@@ -6,8 +6,10 @@ public class Clock : PlugDevice {
     // Will only show and count time when generator has power
 
     [SerializeField] private TextMeshProUGUI _clockTime;
-
+    [SerializeField] private Phone _connectedPhone;
+    
     public float[] _phoneTimes = new float[3];
+    private bool[] _phoneNotified = new bool[3];
 
     [SerializeField] private AudioSource _tikTok;
     private string _previousFormattedTime = "";
@@ -32,17 +34,7 @@ public class Clock : PlugDevice {
             }
             _clockTime.text = formattedTime;
             // Notify phone to call if time is right
-            if (currentTime >= _phoneTimes[0] && Phone.PhoneState.Equals(Phone.PhoneStatedCode.None)) {
-                Phone.PhoneState = Phone.PhoneStatedCode.First;
-                Phone.Instance.Ring();
-                
-            } if(currentTime >= _phoneTimes[1] && Phone.PhoneState.Equals(Phone.PhoneStatedCode.First)) {
-                Phone.PhoneState = Phone.PhoneStatedCode.Second;
-                Phone.Instance.Ring();
-            } if(currentTime >= _phoneTimes[2] && Phone.PhoneState.Equals(Phone.PhoneStatedCode.Second)) {
-                Phone.PhoneState = Phone.PhoneStatedCode.Third;
-                Phone.Instance.Ring();
-            }
+            NotifyPhoneCall(currentTime);
         } else {
             // Turn of the clock
             _clockTime.enabled = false;
@@ -57,21 +49,28 @@ public class Clock : PlugDevice {
 
     protected override void OnDeactivate() {
         _hasPower = false;
-        Phone.Instance.OnPlugDisconnectedPhone();
         base.OnDeactivate();
     }
-
-
 
     private void CreatePhoneTimes() {
         // Total game length is 5 minutes
         // First phone call is after 1 minute
-        _phoneTimes[0] = UnityEngine.Random.Range(60.0f, 90.0f);
+        _phoneTimes[0] = Random.Range(60.0f, 90.0f);
         // Second phone call is after 2.5 minutes
-        _phoneTimes[1] = UnityEngine.Random.Range(120.0f, 200.0f);
+        _phoneTimes[1] = Random.Range(120.0f, 200.0f);
         // Third phone call is after 4 minutes
-        _phoneTimes[2] = UnityEngine.Random.Range(240.0f, 280.0f);
+        _phoneTimes[2] = Random.Range(240.0f, 280.0f);
     }
 
-    public bool GetHasPower() => _hasPower;
+    private void NotifyPhoneCall(float time) {
+        for (int i = 0; i < _phoneTimes.Length; i++) {
+            if (time >= _phoneTimes[i] && !_phoneNotified[i]) {
+                _connectedPhone.SetSoundClipCodeOrder(i);
+                _connectedPhone.Ring();
+                _phoneNotified[i] = true;
+            }
+        }
+    }
+
+    //public bool GetHasPower() => _hasPower;
 }

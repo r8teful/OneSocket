@@ -1475,7 +1475,7 @@ GameObject:
   - component: {fileID: 5682579208757393883}
   m_Layer: 0
   m_Name: SpeakerPlugIn
-  m_TagString: Untagged
+  m_TagString: Speaker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

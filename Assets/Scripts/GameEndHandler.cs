@@ -2,16 +2,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameEndHandler : MonoBehaviour {
-    public static GameEndHandler Instance;
-    private void Awake() {
-        if (Instance == null) {
-            Instance = this;
-        } else {
-            Destroy(gameObject);
-        }
-    }
-
+public class GameEndHandler : StaticInstance<GameEndHandler> {
+  
     [SerializeField] private TextMeshProUGUI _codeText;
     //[SerializeField] private TMP_Text _displayText;
     [SerializeField] private Button[] _numberButtons;
@@ -23,7 +15,7 @@ public class GameEndHandler : MonoBehaviour {
     [SerializeField] private AudioClip _RightClip;
 
     private string _currentCode = "";
-
+    private bool _gameEnd;
 
     private void Start() {
         // Attach button click event handlers
@@ -65,7 +57,7 @@ public class GameEndHandler : MonoBehaviour {
         Debug.Log("e");
         var code = "";
         // Replace this with your code validation logic
-        foreach (int num in Phone.Instance.Code) {
+        foreach (int num in GameManager.Instance.Code) {
             code += num.ToString();
         }
         if (_currentCode == code) {
@@ -86,6 +78,7 @@ public class GameEndHandler : MonoBehaviour {
     }
     private void GameEnd() {
         Debug.Log("YOU DID IT");
-        SceneHandler.Instance.GameWin();
+        _gameEnd = true;
+        //SceneHandler.Instance.GameWin();
     }
 }
