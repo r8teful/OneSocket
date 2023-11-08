@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aaf713cdac54d124eb2f2846d35bc218, type: 3}
-  m_Name: TutorialSequence0
+  m_Name: Code1st
   m_EditorClassIdentifier: 
   interruptBehaviour: 0
   lines:
-  - You can look around by pressing the edges of the screen [w:5]
-  - Please, [w:0.5] click on either edge of the screen with your cursor[w:3]
+  - Very well, [w:0.5]you have survived long enough for me to give \n /n you the
+    first code I will now say a lot more to see how long I can acutally have the
+    text for[w:1]
+  - I will now give you the first digit of the code[w:1]
+  - The first digit of the code is[w:0.5][t:20]... #CODE#[w:3]

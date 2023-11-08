@@ -7,10 +7,14 @@ public class GameManager : StaticInstance<GameManager> {
 
 
     [SerializeField] private bool debugDontStartIntro = false;
-    [SerializeField] private GameObject firstSequencer;
+    [SerializeField] private GameObject _introSequencer;
+    [SerializeField] private GameObject _winSequencer;
+    [SerializeField] private GameObject _loseSequencer;
 
     [SerializeField] private Phone _phone;
     [SerializeField] private int[] _code;
+    
+ 
     public int[] Code { get { return _code; } private set { _code = value; } }
 
 
@@ -23,6 +27,7 @@ public class GameManager : StaticInstance<GameManager> {
             _code[2] = Random.Range(0, 10);
         }
     }
+ 
 
     private void Start() {
 #if UNITY_EDITOR
@@ -31,7 +36,7 @@ public class GameManager : StaticInstance<GameManager> {
         }
 #endif
 
-        firstSequencer.SetActive(true);
+        _introSequencer.SetActive(true);
         
     }
 
@@ -43,5 +48,14 @@ public class GameManager : StaticInstance<GameManager> {
         return _phone.PhoneCallStateNow;
     }
 
+    public void GameWin() {
+        _winSequencer.SetActive(true);
+    }
 
+    public void GameLose() {
+        _loseSequencer.SetActive(true);
+    }
+    public int GetCurrentCode() {
+        return _phone.CurrentCode;
+    }
 }

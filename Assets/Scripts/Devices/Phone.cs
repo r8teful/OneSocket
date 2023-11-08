@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -17,7 +18,9 @@ public class Phone : Interactable {
     [SerializeField] private AudioSource _ringSound;
     [SerializeField] private AudioSource _callSound;
     [SerializeField] private AudioClip[] _codeClips;
-
+    [SerializeField] private List<DialogueEventSO> _codeText = default;
+    //private int _currentCode;
+    public int CurrentCode { get; private set; }
 
     protected override void OnMouseDown() {
         Debug.Log("Clicked on Phone");
@@ -30,8 +33,10 @@ public class Phone : Interactable {
             if(_callSound == null) {
                 //throw new ArgumentException("Parameter is null, need to define _callSound before calling Ring()", nameof(_callSound));
             } else {
-                _callSound.Play();
-                _callSound.volume *= 2f;
+                // _callSound.Play();
+                // _callSound.volume *= 2f;
+               // DialogueManager.Instance.AddDialogueEventToStack(_codeText[CurrentCode]);
+                DialogueManager.Instance.AddDialogueEventToStack(_codeText[0]);
             }
         }
     }
@@ -45,6 +50,8 @@ public class Phone : Interactable {
     }
 
     public void SetSoundClipCodeOrder(int i) {
-        _callSound.clip = _codeClips[GameManager.Instance.Code[i]];
+        CurrentCode = GameManager.Instance.Code[i];
+        _callSound.clip = _codeClips[CurrentCode];
+
     }
 }

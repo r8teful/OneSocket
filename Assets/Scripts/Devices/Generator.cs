@@ -2,8 +2,8 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Generator : MonoBehaviour {
-    public static Generator Instance;
+// TODO If we want more generators than we need to specify which socket it is going to
+public class Generator : StaticInstance<Generator> {
     [SerializeField] private Slider _chargeSlider;
     [SerializeField] private AudioSource _turnOff;
     [SerializeField] private AudioSource _turnOn;
@@ -34,8 +34,8 @@ public class Generator : MonoBehaviour {
 
     public bool IsMaxCharge { get { return _generatorCharge >= _generatorChargeMax; }}
 
-    private void Awake() {
-        Instance = this;
+    protected override void Awake() {
+        base.Awake();
         GeneratorCharge = _generatorCharge;
         _lampLight = transform.GetChild(0).gameObject;
         _lampBulb = transform.GetChild(0).GetChild(0).gameObject;

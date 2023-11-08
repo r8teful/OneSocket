@@ -16,7 +16,6 @@ public class Handle : Interactable {
         _isInsideTrigger = false;
     }
 
-
     // Update is called once per frame
     private void Update() {
         if (Input.GetMouseButton(0) && _isInsideTrigger) {
@@ -28,7 +27,7 @@ public class Handle : Interactable {
             if(!Generator.Instance.Rotating.isPlaying) {
                 Generator.Instance.Rotating.Play();
             } 
-        } else {
+        } else if (Generator.Instance.Rotating.isPlaying) {
             Generator.Instance.Rotating.Stop();
         }
     }

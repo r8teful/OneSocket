@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interruptBehaviour: 0
   lines:
-  - Very good,[w:0.5] now... [w:1]
-  - Look towards the room again [w:2]
+  - Very good,[w:0.5] now,[w:0.5] look towards the room again [w:5]
+  - You need to press the side of your screen with your cursor...[w:1]

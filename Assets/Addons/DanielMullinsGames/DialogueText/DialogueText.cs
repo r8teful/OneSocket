@@ -27,7 +27,7 @@ public class DialogueText : MonoBehaviour
     private float characterFrequency;
     private Color currentColor = Color.black;
     private bool skipToEnd;
-
+    private float _prevTextPos;
     private const float DEFAULT_FREQUENCY = 7.5f;
 #if UNITY_EDITOR
     //private const float DIALOGUE_SPEED = 0.25f;
@@ -50,7 +50,7 @@ public class DialogueText : MonoBehaviour
 
         if (Active)
         {
-           StartCoroutine(PlayMessageSequence(message));
+           StartCoroutine(PlayMessageSequence(message.Replace("#CODE#", GameManager.Instance.GetCurrentCode().ToString())));
         }
     }
 
@@ -100,10 +100,23 @@ public class DialogueText : MonoBehaviour
 
 
         Vector2 position = uiTextRect.anchoredPosition; // anchor has to be in the CENTRE
-
         pos.x = Mathf.Round(pos.x * 100) / 100;
-        pos.y = PixelText.transform.TransformPoint(position).y;
 
+        // fixed bug for , and ' characters being rounded to the wrong number 
+        if (c.Equals(',') || c.Equals('\'') || c.Equals('’')) {
+            pos.y = _prevTextPos; 
+        }
+        _prevTextPos = pos.y;
+        pos.y = Mathf.Round(pos.y/ 50) * 50;
+        
+        // pos.y = transform.position.y;
+        //pos.x = Mathf.Round(pos.x * 100) / 100;
+        // pos.y = PixelText.transform.TransformPoint(position).y;
+        //if (!uiTextRect.rect.Contains(pos)) {
+        //    // Move the quad center position to the next line
+        //    pos.x = uiTextRect.rect.xMin;
+        //    pos.y -= uiText.fontSize;
+        //}
 
         var obj = new GameObject(c.ToString());
         obj.transform.SetParent(uiText.transform.parent);

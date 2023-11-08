@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class CustomUI {
     public static Dictionary<Vector3, char> GetTextLetterPositions(Text text, float characterSpacing) {
         var letterPositions = new Dictionary<Vector3, char>();
-
+        var y = 0f;
         var textGen = text.cachedTextGenerator;
         int quadIndex = 0;
         for (int i = 0; i < text.text.Length; i++) {

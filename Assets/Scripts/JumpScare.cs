@@ -1,14 +1,12 @@
 using UnityEngine;
 
-public class JumpScare : MonoBehaviour {
-    public static JumpScare Instance;
+public class JumpScare : StaticInstance<JumpScare> {
     [SerializeField] private Animator _animator;
     [SerializeField] private AudioSource _aaa;
     [SerializeField] private GameObject _Hand1;
     [SerializeField] private GameObject _Hand2;
     // Start is called before the first frame update
-    private void Awake() {
-        Instance = this;
+    private void Start() {
         _Hand1.SetActive(false);
         _Hand2.SetActive(false);
     }

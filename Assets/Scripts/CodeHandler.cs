@@ -1,8 +1,9 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameEndHandler : StaticInstance<GameEndHandler> {
+public class CodeHandler : StaticInstance<CodeHandler> {
   
     [SerializeField] private TextMeshProUGUI _codeText;
     //[SerializeField] private TMP_Text _displayText;
@@ -14,8 +15,8 @@ public class GameEndHandler : StaticInstance<GameEndHandler> {
     [SerializeField] private AudioClip _WrongClip;
     [SerializeField] private AudioClip _RightClip;
 
+
     private string _currentCode = "";
-    private bool _gameEnd;
 
     private void Start() {
         // Attach button click event handlers
@@ -73,12 +74,12 @@ public class GameEndHandler : StaticInstance<GameEndHandler> {
             _currentCode = "";
             UpdateCodeDisplay();
         }
-
-       
     }
+
     private void GameEnd() {
         Debug.Log("YOU DID IT");
-        _gameEnd = true;
+        GameManager.Instance.GameWin();
+        //GameManager.Instance.GameWin = true;
         //SceneHandler.Instance.GameWin();
     }
 }

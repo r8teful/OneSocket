@@ -16,3 +16,5 @@ MonoBehaviour:
   lines:
   - Very good...[w:1]
   - Now,[w:0.5] try the other lamp [w:5]
+  - You need to disconnect the plug you have currently connected by clicking on it
+    again...[w:0.5]

@@ -15,9 +15,7 @@ MonoBehaviour:
   interruptBehaviour: 0
   lines:
   - You will need a code to escape[w:1]
-  - I know what the code is[w:1]
-  - But if I gave it to you now[w:0.5]
-  - it would ruin my[w:0.5]
-  - '[t:25]Experiment[w:0.5]'
-  - I will call you on this phone and tell you a digit of the code[w:1]
-  - '[t:10]When I please[w:1]'
+  - I know what the code is, [w:0.5]but if I gave it to you now it would ruin my[w:0.5]
+    [t:25]Experiment[w:0.5]
+  - I will call you on this phone and tell you a digit of the code[w:1] [t:10]When
+    I please[w:1]

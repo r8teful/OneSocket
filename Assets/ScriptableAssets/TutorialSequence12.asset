@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interruptBehaviour: 0
   lines:
-  - Very good,[w:0.5] if you look at the generator [w:0.5]
-  - You will see the clock ticking up [w:1]
-  - I will give you the final digit of the code, [w:1]
-  - when this clock reaches 5 minutes [w:1]
+  - Very good,[w:0.5] if you now look at the generator you will see the clock ticking
+    up [w:1]
+  - I will give you the final digit of the code when this clock reaches 5 minutes
+    [w:1]
   - Finally,[w:0.5] we have the speaker[w:1]

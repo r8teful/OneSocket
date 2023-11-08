@@ -1,20 +1,16 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class Monster : MonoBehaviour {
-    public static Monster Instance;
-
-
-    private void Awake() {
-        Instance = this;
-    }
+// Should probably not be a static instance incase we want several monsters, usefull for now
+public class Monster : StaticInstance<Monster> {
 
     // Positions are z axis closes to furthest
     public float BaseMovementSpeed = 0.01f;
     private float _jumpProbability = 0.02f;
     private float _jumpDistance = 0.5f;
     private bool _dead;
-
     private void Start() {
         // start coroutine
         StartCoroutine(AttackCheck());
@@ -85,9 +81,10 @@ public class Monster : MonoBehaviour {
     }
     private IEnumerator Lose() {
         yield return new WaitForSeconds(4f);
-        SceneHandler.Instance.GameLose();
-        
+        GameManager.Instance.GameLose();
+        //GameManager.Instance.GameLose = true;
     }
+
     public void Scare() {
         if(transform.position.z < -20) return;
         transform.position = new Vector3(transform.position.x, transform.position.y, -5);
