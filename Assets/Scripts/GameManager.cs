@@ -43,7 +43,9 @@ public class GameManager : StaticInstance<GameManager> {
     public void RingPhone() {
         _phone.Ring();
     }
-
+    public void PhoneOnHolder() {
+        _phone.PhoneOnHolder();
+    }
     public PhoneCallState GetPhoneCallState() {
         return _phone.PhoneCallStateNow;
     }

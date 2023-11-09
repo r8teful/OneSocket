@@ -27,21 +27,25 @@ public class AudioParams
             pitch = Random.Range(minRandom, maxRandom);
         }
 
-        public Pitch(Variation randomVariation)
+        public Pitch(Variation randomVariation,float offset = 0)
         {
             switch (randomVariation)
             {
                 case Variation.VerySmall:
                     pitch = Random.Range(0.95f, 1.05f);
+                    pitch += offset;
                     break;
                 case Variation.Small:
                     pitch = Random.Range(0.9f, 1.1f);
+                    pitch += offset;
                     break;
                 case Variation.Medium:
                     pitch = Random.Range(0.75f, 1.25f);
+                    pitch += offset;
                     break;
                 case Variation.Large:
                     pitch = Random.Range(0.5f, 1.5f);
+                    pitch += offset;
                     break;
             }
         }

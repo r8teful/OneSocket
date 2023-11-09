@@ -25,6 +25,5 @@ public class SequenceIntro : Sequencer {
         Debug.Log("Phone Idle");
         DialogueManager.Instance.AddDialogueEventToStack(dialogueEvents[0]);
         yield return new WaitUntil(() => DialogueManager.Instance.NoDialoguePlaying);
-
     }
 }

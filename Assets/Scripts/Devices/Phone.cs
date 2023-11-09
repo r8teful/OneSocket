@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class Phone : Interactable {
     // Does not need charge, just calls lol when its wants, its a magic phone.
@@ -19,18 +18,24 @@ public class Phone : Interactable {
     [SerializeField] private AudioSource _callSound;
     [SerializeField] private AudioClip[] _codeClips;
     [SerializeField] private List<DialogueEventSO> _codeText = default;
+    [SerializeField] private GameObject _phoneOn;
+    [SerializeField] private GameObject _phoneOff;
     //private int _currentCode;
     public int CurrentCode { get; private set; }
+
+    private void Start() {
+        _phoneOff.SetActive(false);
+        _phoneOn.SetActive(true);
+    }
 
     protected override void OnMouseDown() {
         Debug.Log("Clicked on Phone");
         // Make sure the phone is ringing
         if(_ringSound.isPlaying) {
             // stop ringing
-            _phoneCallState = PhoneCallState.Idle;
-            _ringSound.Stop();
-            
-            if(_callSound == null) {
+            StopRing();
+            PhoneOffHolder();
+            if (_callSound == null) {
                 //throw new ArgumentException("Parameter is null, need to define _callSound before calling Ring()", nameof(_callSound));
             } else {
                 // _callSound.Play();
@@ -46,7 +51,21 @@ public class Phone : Interactable {
         if(!_ringSound.isPlaying) {
             _phoneCallState = PhoneCallState.Ringing;
             _ringSound.Play();
+            _phoneOn.GetComponent<Vibration>().StartVibration();
         }
+    }
+    private void StopRing() {
+        _phoneCallState = PhoneCallState.Idle;
+        _ringSound.Stop();
+    }
+
+    public void PhoneOnHolder() {
+        _phoneOff.SetActive(false);
+        _phoneOn.SetActive(true);
+    }
+    public void PhoneOffHolder() {
+        _phoneOff.SetActive(true);
+        _phoneOn.SetActive(false);
     }
 
     public void SetSoundClipCodeOrder(int i) {

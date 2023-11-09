@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interruptBehaviour: 0
   lines:
-  - Try it now,[w:0.5] click on a lamp plug[w:1]
+  - Try it now,[w:0.5] click on a lamp plug[w:5]
+  - Please,[w:0.5] Use your left mouse button to plug one of the lamp plugs, they
+    are laying on the ground next to the socket [w:3]

@@ -46,8 +46,7 @@ public class SequenceTutorial : Sequencer {
         }
         Generator.Instance.DissableDischarge();
 
-        yield return new WaitUntil(() => (Socket.Instance.CurrentPlug == PlugType.LampClose) ||
-        Socket.Instance.CurrentPlug == PlugType.LampFar);
+        yield return new WaitUntil(() => (Socket.Instance.CurrentPlug == PlugType.LampClose) || Socket.Instance.CurrentPlug == PlugType.LampFar);
 
         if(Socket.Instance.CurrentPlug == PlugType.LampFar) {
             // Good, now plug in the close one
@@ -56,8 +55,9 @@ public class SequenceTutorial : Sequencer {
         } else {
             // Continue 
             DialogueManager.Instance.AddDialogueEventToStack(dialogueEvents[8]);
+
+            yield return new WaitUntil(() => DialogueManager.Instance.NoDialoguePlaying);
         }
-        yield return new WaitUntil(() => DialogueManager.Instance.NoDialoguePlaying);
         DialogueManager.Instance.AddDialogueEventToStack(dialogueEvents[9]);
 
         // Code wall 
@@ -96,6 +96,7 @@ public class SequenceTutorial : Sequencer {
         yield return new WaitUntil(() => Socket.Instance.CurrentPlug == PlugType.Speaker);
         DialogueManager.Instance.AddDialogueEventToStack(dialogueEvents[14]);
 
+        // Should check if speaker is out of charge, maybe give more charge?
         yield return new WaitUntil(() => Socket.Instance.CurrentPlug == PlugType.Empty);
         DialogueManager.Instance.AddDialogueEventToStack(dialogueEvents[15]);
         yield return new WaitUntil(() => DialogueManager.Instance.NoDialoguePlaying);
@@ -109,6 +110,6 @@ public class SequenceTutorial : Sequencer {
         foreach (ClickArea clickArea in _clickAreas) {
             clickArea.SetInteraction(true);
         }
-
+        GameManager.Instance.PhoneOnHolder();
     }
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interruptBehaviour: 0
   lines:
-  - You have One[t:25]...[w:1.5]Socket...[w:1]
+  - You have One[t:25]...[w:1.5]Socket[w:1]
   - One socket to power your devices [w:1]
   - Now,[w:0.5] to power a device[w:1]
   - Simply click on the plug of that device[w:1]
