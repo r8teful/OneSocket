@@ -7,9 +7,11 @@ public class GameManager : StaticInstance<GameManager> {
 
 
     [SerializeField] private bool debugDontStartIntro = false;
+    [SerializeField] private bool debugNoMonster = false;
     [SerializeField] private GameObject _introSequencer;
     [SerializeField] private GameObject _winSequencer;
     [SerializeField] private GameObject _loseSequencer;
+    [SerializeField] private GameObject _monster;
 
     [SerializeField] private Phone _phone;
     [SerializeField] private int[] _code;
@@ -37,7 +39,13 @@ public class GameManager : StaticInstance<GameManager> {
 #endif
 
         _introSequencer.SetActive(true);
-        
+
+#if UNITY_EDITOR
+        if (debugNoMonster) {
+            return;
+        }
+#endif
+        _monster.SetActive(true);
     }
 
     public void RingPhone() {

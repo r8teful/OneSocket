@@ -8,7 +8,7 @@ public class Generator : StaticInstance<Generator> {
     [SerializeField] private AudioSource _turnOff;
     [SerializeField] private AudioSource _turnOn;
     [SerializeField] private float _dischargeRate = 0.1f;
-     private float _previousdischargeRate;
+    private float _previousdischargeRate;
     public AudioSource Rotating;
     private GameObject _lampLight;
     private GameObject _lampBulb;
@@ -37,6 +37,7 @@ public class Generator : StaticInstance<Generator> {
     protected override void Awake() {
         base.Awake();
         GeneratorCharge = _generatorCharge;
+        _previousdischargeRate = _dischargeRate;
         _lampLight = transform.GetChild(0).gameObject;
         _lampBulb = transform.GetChild(0).GetChild(0).gameObject;
     }
@@ -78,7 +79,7 @@ public class Generator : StaticInstance<Generator> {
                 _previousPower = true;
             }
             // Drain power when there is a socket connection
-            if(Socket.Instance.CurrentPlug != PlugType.Empty) GeneratorCharge -= _dischargeRate * 0.02f;
+            if(Socket.Instance.CurrentPlug != PlugType.Empty) GeneratorCharge -= _dischargeRate*0.02f;
         }
     }
     public void DissableDischarge() {

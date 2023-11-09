@@ -16,10 +16,10 @@ public class Phone : Interactable {
 
     [SerializeField] private AudioSource _ringSound;
     [SerializeField] private AudioSource _callSound;
-    [SerializeField] private AudioClip[] _codeClips;
     [SerializeField] private List<DialogueEventSO> _codeText = default;
     [SerializeField] private GameObject _phoneOn;
     [SerializeField] private GameObject _phoneOff;
+    private int _codePosition;
     //private int _currentCode;
     public int CurrentCode { get; private set; }
 
@@ -41,7 +41,7 @@ public class Phone : Interactable {
                 // _callSound.Play();
                 // _callSound.volume *= 2f;
                // DialogueManager.Instance.AddDialogueEventToStack(_codeText[CurrentCode]);
-                DialogueManager.Instance.AddDialogueEventToStack(_codeText[0]);
+                DialogueManager.Instance.AddDialogueEventToStack(_codeText[_codePosition]);
             }
         }
     }
@@ -69,8 +69,6 @@ public class Phone : Interactable {
     }
 
     public void SetSoundClipCodeOrder(int i) {
-        CurrentCode = GameManager.Instance.Code[i];
-        _callSound.clip = _codeClips[CurrentCode];
-
+        _codePosition = i;
     }
 }
