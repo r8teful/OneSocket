@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aaf713cdac54d124eb2f2846d35bc218, type: 3}
-  m_Name: Code2nd
+  m_Name: CodeSpeakerNote
   m_EditorClassIdentifier: 
   interruptBehaviour: 2
   lines:
-  - Very well, you have survived long enough
-  - The first digit of the code is #CODE#
+  - I can see that you only have 1 speaker charge left...[w:1]
+  - 'Remember,[w:0.5] you will not get more, you wont be able to scare the monster
+    any other way '
+  - 'Please,[0.5] use the last one whisely '

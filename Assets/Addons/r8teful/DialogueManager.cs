@@ -64,8 +64,9 @@ public class DialogueManager : Singleton<DialogueManager> {
         int randomIndex = Random.Range(0, vowels.Length);
         string selectedVowel = vowels[randomIndex];
 
-        AudioController.Instance.PlaySound2D(selectedVowel, pitch: new AudioParams.Pitch(AudioParams.Pitch.Variation.VerySmall), 
-            repetition: new AudioParams.Repetition(0.075f*4));
+        // TODO hardcored player position
+        AudioController.Instance.PlaySound3D("Voice",new Vector3(0,2.5f,-27), pitch: new AudioParams.Pitch(AudioParams.Pitch.Variation.Small), 
+            repetition: new AudioParams.Repetition(0.075f*2), randomization: new AudioParams.Randomization(true), distortion: new AudioParams.Distortion(false,true));
     }
 
     /*

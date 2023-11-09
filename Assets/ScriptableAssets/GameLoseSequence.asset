@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: GameLoseSequence
   m_EditorClassIdentifier: 
   interruptBehaviour: 0
-  lines: []
+  lines:
+  - '[t:20] You lost...[w:2] How dissapointing '

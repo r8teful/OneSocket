@@ -26,7 +26,7 @@ public class SequenceTutorial : Sequencer {
         DialogueManager.Instance.AddDialogueEventToStack(dialogueEvents[3]);
         yield return new WaitUntil(() => Generator.Instance.IsMaxCharge);
         DialogueManager.Instance.AddDialogueEventToStack(dialogueEvents[4]);
-        yield return new WaitUntil(() => DialogueManager.Instance.NoDialoguePlaying);
+        //yield return new WaitUntil(() => DialogueManager.Instance.NoDialoguePlaying);
         yield return new WaitUntil(() => CameraMovement.Instance.LookState == CameraMovement.CameraState.Room);
         
         DialogueManager.Instance.AddDialogueEventToStack(dialogueEvents[5]);

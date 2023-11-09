@@ -75,5 +75,12 @@ public class AudioParams
     public class Distortion
     {
         public bool muffled;
+        public bool reverb;
+        public Distortion(bool muffled = false, bool reverb = false) {
+            this.muffled = muffled;
+            this.reverb = reverb;
+        }
+
     }
+   
 }

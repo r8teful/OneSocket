@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interruptBehaviour: 0
   lines:
-  - Very well, [w:0.5]you have survived long enough for me to give \n /n you the
-    first code I will now say a lot more to see how long I can acutally have the
-    text for[w:1]
-  - I will now give you the first digit of the code[w:1]
+  - You are doing well, [w:0.5]you have survived long enough for me to give you the
+    first digit of the code[w:1]
   - The first digit of the code is[w:0.5][t:20]... #CODE#[w:3]

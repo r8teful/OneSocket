@@ -128,6 +128,10 @@ public class AudioController : MonoBehaviour
                 {
                     MuffleSource(source);
                 }
+                if(distortion.reverb) 
+                {
+                    ReverbSource(source);
+                }
             }
         }
 
@@ -294,6 +298,11 @@ public class AudioController : MonoBehaviour
     public void UnMuffleLoop(int loopIndex = 0)
     {
         UnMuffleSource(loopSources[loopIndex]);
+    }
+
+    private void ReverbSource(AudioSource source) {
+        var reverb = source.gameObject.AddComponent<AudioReverbFilter>();
+        reverb.reverbPreset = AudioReverbPreset.Alley;
     }
 
     public void SetLoopTimeNormalized(float normalizedTime, int loopIndex = 0)
