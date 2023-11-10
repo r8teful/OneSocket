@@ -12,6 +12,9 @@ public class Monster : StaticInstance<Monster> {
     private float _jumpDistance = 0.5f;
     private bool _dead;
     private void Start() {
+        // Start position
+        transform.position = new Vector3(transform.position.x, transform.position.y, -5);
+        
         // start coroutine
         StartCoroutine(AttackCheck());
         // todo Start random sound coroutine
@@ -52,9 +55,9 @@ public class Monster : StaticInstance<Monster> {
             //if (z <= -20) return 1;
         } else if (CameraMovement.Instance.LookState.Equals(CameraMovement.CameraState.Code)) {
             // Chances when player is looking away from the monster these are the highest values
-            if (z > -12) return 0f;
-            if (z <= -12 && z > -14) return 0.01f;
-            if (z <= -14 && z > -18) return 0.1f;
+            if (z > -14) return 0f;
+            if (z <= -14 && z > -16) return 0.01f;
+            if (z <= -16 && z > -18) return 0.1f;
             if (z <= -18 && z > -20) return 0.6f;
             if (z <= -20) return 1f;
         } else {
@@ -86,7 +89,7 @@ public class Monster : StaticInstance<Monster> {
     }
 
     public void Scare() {
-        if(transform.position.z < -20) return;
+        if(transform.position.z > 10) return;
         transform.position = new Vector3(transform.position.x, transform.position.y, -5);
     }
 }

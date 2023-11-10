@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf713cdac54d124eb2f2846d35bc218, type: 3}
   m_Name: Code2nd
   m_EditorClassIdentifier: 
-  interruptBehaviour: 2
+  interruptBehaviour: 0
   lines:
-  - Very well, you have survived long enough
-  - The first digit of the code is #CODE#
+  - I'm very impressed, [w:0.5]you should probably hurry up and get out of here[w:1]
+  - The monster is getting very [t:15]aggresive[w:1]
+  - The second digit of the code is[w:0.5][t:20]... #CODE#[w:3]

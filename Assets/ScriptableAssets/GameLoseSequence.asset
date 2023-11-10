@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interruptBehaviour: 0
   lines:
-  - '[t:20] You lost...[w:2] How dissapointing '
+  - '[t:20] You lost...[w:2] How dissapointing[w:2]'
+  - '[t:20]Try again?[w:10]'

@@ -66,6 +66,12 @@ public class GameManager : StaticInstance<GameManager> {
         _loseSequencer.SetActive(true);
     }
     public int GetCurrentCode() {
-        return _phone.CurrentCode;
+        return Code[_phone.CurrentCodePosition];
+    }
+    public void DisableMonster() {
+        _monster.SetActive(false);
+    }
+    public void EnableMonster() {
+        _monster.SetActive(true);
     }
 }

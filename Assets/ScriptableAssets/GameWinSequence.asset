@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: GameWinSequence
   m_EditorClassIdentifier: 
   interruptBehaviour: 0
-  lines: []
+  lines:
+  - '[p:1] Well done,[w:1] you will be compensated for your work[w:1]'
+  - '[p:1] Please wait here until an escort helps you get back[w:2]'

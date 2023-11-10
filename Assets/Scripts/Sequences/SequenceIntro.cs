@@ -17,6 +17,7 @@ public class SequenceIntro : Sequencer {
             clickArea.SetInteraction(false);
         }
 
+        GameManager.Instance.DisableMonster();
         _socketLight.SetActive(false);
         _phoneLight.SetActive(true);
         GameManager.Instance.RingPhone();

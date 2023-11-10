@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,9 +20,7 @@ public class Phone : Interactable {
     [SerializeField] private List<DialogueEventSO> _codeText = default;
     [SerializeField] private GameObject _phoneOn;
     [SerializeField] private GameObject _phoneOff;
-    private int _codePosition;
-    //private int _currentCode;
-    public int CurrentCode { get; private set; }
+    public int CurrentCodePosition { get; private set; }
 
     private void Start() {
         _phoneOff.SetActive(false);
@@ -29,7 +28,6 @@ public class Phone : Interactable {
     }
 
     protected override void OnMouseDown() {
-        Debug.Log("Clicked on Phone");
         // Make sure the phone is ringing
         if(_ringSound.isPlaying) {
             // stop ringing
@@ -41,9 +39,15 @@ public class Phone : Interactable {
                 // _callSound.Play();
                 // _callSound.volume *= 2f;
                // DialogueManager.Instance.AddDialogueEventToStack(_codeText[CurrentCode]);
-                DialogueManager.Instance.AddDialogueEventToStack(_codeText[_codePosition]);
+                DialogueManager.Instance.AddDialogueEventToStack(_codeText[CurrentCodePosition]);
+                StartCoroutine(WaitForDialogueEnd());
             }
         }
+    }
+
+    private IEnumerator WaitForDialogueEnd() {
+        yield return new WaitUntil(() => DialogueManager.Instance.NoDialoguePlaying);
+        PhoneOnHolder();
     }
 
     // Activate ringsound and also specify what will be played when answered
@@ -67,8 +71,7 @@ public class Phone : Interactable {
         _phoneOff.SetActive(true);
         _phoneOn.SetActive(false);
     }
-
     public void SetSoundClipCodeOrder(int i) {
-        _codePosition = i;
+        CurrentCodePosition = i;
     }
 }

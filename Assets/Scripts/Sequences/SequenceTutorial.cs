@@ -12,7 +12,7 @@ public class SequenceTutorial : Sequencer {
         foreach (ClickArea clickArea in _clickAreas) {
             clickArea.SetInteraction(false);
         }
-
+        GameManager.Instance.DisableMonster();
         _socketLight.SetActive(false);
         _phoneLight.SetActive(true);
 
@@ -105,6 +105,7 @@ public class SequenceTutorial : Sequencer {
         yield return new WaitUntil(() => DialogueManager.Instance.NoDialoguePlaying);
 
         DialogueManager.Instance.AddDialogueEventToStack(dialogueEvents[17]);
+        yield return new WaitUntil(() => DialogueManager.Instance.NoDialoguePlaying);
         // Setup Ready for game
         _clickAreas = FindObjectsOfType<ClickArea>();
         foreach (ClickArea clickArea in _clickAreas) {

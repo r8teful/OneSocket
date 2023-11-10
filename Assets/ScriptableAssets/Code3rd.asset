@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interruptBehaviour: 0
   lines:
-  - Very well, you have survived long enough
-  - The first digit of the code is #CODE#
+  - You have satisfied me, [w:0.5] I have gathered enough data for my experiment
+    [w:1][t:15] for now [w:1]
+  - The final digit of the code is #CODE#[w:3]

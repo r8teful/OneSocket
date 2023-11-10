@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aaf713cdac54d124eb2f2846d35bc218, type: 3}
-  m_Name: TutorialSequence16
+  m_Name: TutorialSequence10Impreved
   m_EditorClassIdentifier: 
-  interruptBehaviour: 2
+  interruptBehaviour: 0
   lines:
-  - If you look closely at the speaker you can see the charges it has left[w:1]
-  - Use them wisely,[w:0.5] as you will not get more [w:1]
+  - You will need a code to complete this experiment[w:1]
+  - If you want to get your compensation,[w:0.5] you'll have to get all three digits
+    of the code[w:2]]
+  - When you have survived long enough, I will call you on this phone and tell you
+    a digit of the code[w:1]

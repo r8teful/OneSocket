@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interruptBehaviour: 0
   lines:
-  - You need to keep this bad boy powered [w:1]
+  - You need to keep this thing powered [w:1]
   - Otherwhise, [w:0.5][t:15]Well... [w:1]
-  - Bad things will happen[w:1]
+  - You wont be able to power your devices [w:1]
