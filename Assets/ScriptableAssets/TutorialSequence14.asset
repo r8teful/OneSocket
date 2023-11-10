@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interruptBehaviour: 0
   lines:
-  - '[p:0.2][t:2]OHH MY EARS [w:0.2]'
-  - '[p:0.2][t:2]OH MY GOD[w:0.2]'
-  - '[p:0.2][t:2]THAT IS SO LOUD[w:0.2]'
-  - '[p:0.2][t:2]YOU SHOULD TURN IT OFF[w:0.2]'
-  - '[p:0.2][t:2]TURN IT OFF[w:0.2]'
-  - '[p:0.2][t:2]TURN IT OFF[w:0.2]'
-  - '[p:0.2][t:2]TURN IT OFF PLEASE [w:0.2]'
-  - '[p:0.2][t:2]PLEASE [w:0.2]'
-  - '[p:0.2][t:2]OMG [w:0.2]'
-  - '[p:0.2][t:2]DO IT NOW [w:0.2]'
+  - '[p:0.1][t:2]OHH MY EARS [w:0.2]'
+  - '[p:0.1][t:2]OH MY GOD[w:0.2]'
+  - '[p:0.1][t:2]THAT IS SO LOUD[w:0.2]'
+  - '[p:0.1][t:2]YOU SHOULD TURN IT OFF[w:0.2]'
+  - '[p:0.1][t:2]TURN IT OFF[w:0.2]'
+  - '[p:0.1][t:2]TURN IT OFF[w:0.2]'
+  - '[p:0.1][t:2]TURN IT OFF PLEASE [w:0.2]'
+  - '[p:0.1][t:2]PLEASE [w:0.2]'
+  - '[p:0.1][t:2]OMG [w:0.2]'
+  - '[p:0.1][t:2]DO IT NOW [w:0.2]'

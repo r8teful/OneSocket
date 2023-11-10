@@ -16,12 +16,11 @@ public class Phone : Interactable {
 
 
     [SerializeField] private AudioSource _ringSound;
-    [SerializeField] private AudioSource _callSound;
     [SerializeField] private List<DialogueEventSO> _codeText = default;
     [SerializeField] private GameObject _phoneOn;
     [SerializeField] private GameObject _phoneOff;
     public int CurrentCodePosition { get; private set; }
-
+    private bool _firstTime = false;
     private void Start() {
         _phoneOff.SetActive(false);
         _phoneOn.SetActive(true);
@@ -33,12 +32,7 @@ public class Phone : Interactable {
             // stop ringing
             StopRing();
             PhoneOffHolder();
-            if (_callSound == null) {
-                //throw new ArgumentException("Parameter is null, need to define _callSound before calling Ring()", nameof(_callSound));
-            } else {
-                // _callSound.Play();
-                // _callSound.volume *= 2f;
-               // DialogueManager.Instance.AddDialogueEventToStack(_codeText[CurrentCode]);
+            if (_firstTime) {
                 DialogueManager.Instance.AddDialogueEventToStack(_codeText[CurrentCodePosition]);
                 StartCoroutine(WaitForDialogueEnd());
             }
@@ -72,6 +66,7 @@ public class Phone : Interactable {
         _phoneOn.SetActive(false);
     }
     public void SetSoundClipCodeOrder(int i) {
+        _firstTime = true;
         CurrentCodePosition = i;
     }
 }

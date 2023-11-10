@@ -16,9 +16,10 @@ public class SequenceIntro : Sequencer {
         foreach (ClickArea clickArea in clickAreas) {
             clickArea.SetInteraction(false);
         }
-
         GameManager.Instance.DisableMonster();
         _socketLight.SetActive(false);
+        _phoneLight.SetActive(false);
+        yield return new WaitForSeconds(3);
         _phoneLight.SetActive(true);
         GameManager.Instance.RingPhone();
         yield return new WaitUntil(() => GameManager.Instance.GetPhoneCallState().Equals(Phone.PhoneCallState.Idle));

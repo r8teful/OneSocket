@@ -1,50 +1,25 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public class SceneHandler : PersistentSingleton<SceneHandler> {
 
-public class SceneHandler : MonoBehaviour {
-    //[SerializeField] private Transform _lookAtWin;
-    //[SerializeField] private Transform _lookAtLose;
-    public static SceneHandler Instance;
-
-    private void Awake() {
-        if (Instance == null) {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        } 
+    public void LoadPlayScene() {
+        SceneManager.LoadScene(0);
     }
 
-    private void Start() {
+    public void PlayClicked() {
+        StartCoroutine(PlayClickedRoutine());
     }
 
-    private void Update() {
-        if (SceneManager.GetActiveScene().buildIndex == 1) {
-            if (Input.GetKeyDown(KeyCode.R)) {
-                RestartGame();
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha1)) {
-            SceneManager.LoadScene(1); 
-        }
-        if (Input.GetKeyDown(KeyCode.K)) {
-            GameWin();
-        }
-        if (Input.GetKeyDown(KeyCode.L)) {
-            GameLose();
-        }
+    private IEnumerator PlayClickedRoutine() {
+        AudioController.Instance.FadeOutLoop(4);
+        MainMenu.Instance.FadeOut();
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(0);
     }
 
-    public void RestartGame() {
-        SceneManager.LoadScene(1);
+    public void LoadScene(int sceneBuildIndex) {
+        SceneManager.LoadScene(sceneBuildIndex);
     }
-    public void GameWin() {
-        SceneManager.LoadScene(3);
-    }
-    public void GameLose() {
-        SceneManager.LoadScene(2);
-        //_camera.transform.position = new Vector3(-0.18f, 1.136f, -31.287f);
-        //_camera.transform.LookAt(_lookAtLose);
-        //todo
-    }
-
 }

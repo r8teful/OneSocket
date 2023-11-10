@@ -4,8 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Pixelplacement;
 
-public class AudioController : MonoBehaviour
-{
+public class AudioController : PersistentSingleton<AudioController> {
     public AudioSource BaseLoopSource
     {
         get
@@ -13,8 +12,6 @@ public class AudioController : MonoBehaviour
             return loopSources[0];
         }
     }
-
-    public static AudioController Instance { get; private set; }
 
     public const float GBC_INTERIOR_BGM_LOWEREDVOLUME = 0.35f;
     public const float GBC_INTERIOR_BGM_FULLVOLUME = 0.55f;
@@ -48,17 +45,8 @@ public class AudioController : MonoBehaviour
 
     private readonly int[] DEFAULT_LOOPSOURCE_INDICES = new int[] { 0 };
 
-    void Awake()
-    {
-        if (Instance)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-        transform.parent = null;
-        DontDestroyOnLoad(gameObject);
-
+    protected override void Awake() {
+        base.Awake();
         foreach (object o in Resources.LoadAll("Audio/SoundEffects"))
         {
             sfx.Add((AudioClip)o);
