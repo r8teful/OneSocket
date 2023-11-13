@@ -28,7 +28,7 @@ public class FlickeringLight : MonoBehaviour {
         }
     }
 
-    void OnDisable() {
-        _targetLight.intensity = baseIntensity;
-    }
+    //void OnDisable() {
+    //    _targetLight.intensity = baseIntensity;
+    //}
 }
