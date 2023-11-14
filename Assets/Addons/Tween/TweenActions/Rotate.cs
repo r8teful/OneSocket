@@ -6,11 +6,9 @@
 
 using UnityEngine;
 using System;
-using Pixelplacement;
 
-namespace Pixelplacement.TweenSystem
-{
-	class Rotate : TweenBase
+namespace Pixelplacement.TweenSystem {
+    class Rotate : TweenBase
 	{
 		#region Public Properties
 		public Vector3 EndValue {get; private set;}

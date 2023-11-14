@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SequenceTutorial : Sequencer {
@@ -8,6 +7,9 @@ public class SequenceTutorial : Sequencer {
     [SerializeField] private GameObject _phoneLight;
     private ClickArea[] _clickAreas;
     protected override IEnumerator Sequence() {
+        if (ProgressionManager.Instance.CompletedTutorial) {
+            yield break;
+        }
         _clickAreas = FindObjectsOfType<ClickArea>();
         foreach (ClickArea clickArea in _clickAreas) {
             clickArea.SetInteraction(false);
@@ -112,5 +114,8 @@ public class SequenceTutorial : Sequencer {
             clickArea.SetInteraction(true);
         }
         GameManager.Instance.PhoneOnHolder();
+
+        // Mark tutorial complete
+        ProgressionManager.Instance.CompletedTutorial = true;
     }
 }

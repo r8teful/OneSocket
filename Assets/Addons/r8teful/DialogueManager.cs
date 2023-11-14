@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics.Tracing;
-using TMPro;
 using UnityEngine;
 
-public class DialogueManager : Singleton<DialogueManager> {
+public class DialogueManager : StaticInstance<DialogueManager> {
     public bool NoDialoguePlaying => eventStack.Count == 0;
     public DialogueEventSO CurrentEvent => NoDialoguePlaying ? null : eventStack.Peek();
 

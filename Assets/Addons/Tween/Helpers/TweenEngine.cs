@@ -9,11 +9,9 @@
 
 using UnityEngine;
 using System.Collections;
-using Pixelplacement;
 
-namespace Pixelplacement.TweenSystem
-{
-	public class TweenEngine : MonoBehaviour 
+namespace Pixelplacement.TweenSystem {
+    public class TweenEngine : MonoBehaviour 
 	{
 		#region Public Methods
 		public void ExecuteTween (TweenBase tween)

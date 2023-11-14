@@ -6,11 +6,9 @@
 
 using UnityEngine;
 using System;
-using Pixelplacement;
 
-namespace Pixelplacement.TweenSystem
-{
-	class SpriteRendererColor : TweenBase
+namespace Pixelplacement.TweenSystem {
+    class SpriteRendererColor : TweenBase
 	{
 		#region Public Properties
 		public Color EndValue {get; private set;}

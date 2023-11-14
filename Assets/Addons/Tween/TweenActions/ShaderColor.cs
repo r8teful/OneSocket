@@ -6,12 +6,10 @@
 
 using UnityEngine;
 using System;
-using Pixelplacement;
 using System.Collections.Generic;
 
-namespace Pixelplacement.TweenSystem
-{
-	class ShaderColor : TweenBase
+namespace Pixelplacement.TweenSystem {
+    class ShaderColor : TweenBase
 	{
 		#region Public Properties
 		public Color EndValue {get; private set;}

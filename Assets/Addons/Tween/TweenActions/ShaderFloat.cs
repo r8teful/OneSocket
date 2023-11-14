@@ -6,11 +6,9 @@
 
 using UnityEngine;
 using System;
-using Pixelplacement;
 
-namespace Pixelplacement.TweenSystem
-{
-	class ShaderFloat : TweenBase
+namespace Pixelplacement.TweenSystem {
+    class ShaderFloat : TweenBase
 	{
 		#region Public Properties
 		public float EndValue {get; private set;}

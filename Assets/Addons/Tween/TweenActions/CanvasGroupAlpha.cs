@@ -6,12 +6,9 @@
 
 using UnityEngine;
 using System;
-using UnityEngine.UI;
-using Pixelplacement;
 
-namespace Pixelplacement.TweenSystem
-{
-	class CanvasGroupAlpha : TweenBase
+namespace Pixelplacement.TweenSystem {
+    class CanvasGroupAlpha : TweenBase
 	{
 		#region Public Properties
 		public float EndValue {get; private set;}

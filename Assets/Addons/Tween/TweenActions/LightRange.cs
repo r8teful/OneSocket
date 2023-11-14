@@ -6,11 +6,9 @@
 
 using UnityEngine;
 using System;
-using Pixelplacement;
 
-namespace Pixelplacement.TweenSystem
-{
-	class LightRange : TweenBase
+namespace Pixelplacement.TweenSystem {
+    class LightRange : TweenBase
 	{
 		#region Public Properties
 		public float EndValue {get; private set;}

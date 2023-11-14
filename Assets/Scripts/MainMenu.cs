@@ -16,10 +16,10 @@ public class MainMenu : StaticInstance<MainMenu> {
     }
     public IEnumerator FadeOut() {
         _fadeOut.gameObject.SetActive(true);
-        yield return StartCoroutine(_fadeOut.GetComponent<AlphaLerp>().Fade());
+        yield return StartCoroutine(_fadeOut.GetComponent<AlphaLerp>().Fade(false));
     }
 
     private void OnPlayClick() {
-        SceneHandler.Instance.PlayClicked();
+        SceneHandler.Instance.PlayClickedMainMenu();
     }
 }

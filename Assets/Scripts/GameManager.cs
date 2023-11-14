@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static Phone;
 
 public class GameManager : StaticInstance<GameManager> {
 
 
     [SerializeField] private bool debugDontStartIntro = false;
     [SerializeField] private bool debugNoMonster = false;
+    [SerializeField] private bool debugWinGame = false;
+    [SerializeField] private bool debugLoseGame = false;
     [SerializeField] private GameObject _introSequencer;
     [SerializeField] private GameObject _winSequencer;
     [SerializeField] private GameObject _loseSequencer;
@@ -48,13 +47,23 @@ public class GameManager : StaticInstance<GameManager> {
         _monster.SetActive(true);
     }
 
+#if UNITY_EDITOR
+    private void Update() {
+        if (debugWinGame) {
+            GameWin();
+        }
+        if (debugLoseGame) {
+            GameLose();
+        }
+    }
+#endif
     public void RingPhone() {
         _phone.Ring();
     }
     public void PhoneOnHolder() {
         _phone.PhoneOnHolder();
     }
-    public PhoneCallState GetPhoneCallState() {
+    public Phone.PhoneCallState GetPhoneCallState() {
         return _phone.PhoneCallStateNow;
     }
 

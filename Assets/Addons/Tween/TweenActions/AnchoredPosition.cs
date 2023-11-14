@@ -6,12 +6,9 @@
 
 using UnityEngine;
 using System;
-using UnityEngine.UI;
-using Pixelplacement;
 
-namespace Pixelplacement.TweenSystem
-{
-	class AnchoredPosition : TweenBase
+namespace Pixelplacement.TweenSystem {
+    class AnchoredPosition : TweenBase
 	{
 		#region Public Properties
 		public Vector2 EndValue {get; private set;}

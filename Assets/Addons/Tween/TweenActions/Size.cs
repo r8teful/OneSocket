@@ -6,12 +6,9 @@
 
 using UnityEngine;
 using System;
-using UnityEngine.UI;
-using Pixelplacement;
 
-namespace Pixelplacement.TweenSystem
-{
-	class Size : TweenBase
+namespace Pixelplacement.TweenSystem {
+    class Size : TweenBase
 	{
 		#region Public Properties
 		public Vector2 EndValue {get; private set;}

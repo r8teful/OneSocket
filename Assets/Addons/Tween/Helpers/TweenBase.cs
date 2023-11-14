@@ -9,13 +9,11 @@
 
 using UnityEngine;
 using System;
-using Pixelplacement;
 
 #pragma warning disable 0168
 
-namespace Pixelplacement.TweenSystem
-{
-	public abstract class TweenBase
+namespace Pixelplacement.TweenSystem {
+    public abstract class TweenBase
 	{
 		#region Public Variables
 		public int targetInstanceID;

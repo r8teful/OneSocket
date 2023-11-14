@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SequenceIntro : Sequencer {
@@ -9,7 +8,9 @@ public class SequenceIntro : Sequencer {
 
     protected override IEnumerator Sequence() {
         Debug.Log("Starded intro sequence");
-
+        if (ProgressionManager.Instance.CompletedTutorial) {
+            yield break;
+        }
         //  set interactions off for plugs
         ClickArea[] clickAreas = FindObjectsOfType<ClickArea>();
 

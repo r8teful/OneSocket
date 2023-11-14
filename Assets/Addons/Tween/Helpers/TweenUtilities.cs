@@ -8,11 +8,9 @@
 /// </summary>
 
 using UnityEngine;
-using Pixelplacement;
 
-namespace Pixelplacement.TweenSystem
-{
-	public class TweenUtilities : MonoBehaviour
+namespace Pixelplacement.TweenSystem {
+    public class TweenUtilities : MonoBehaviour
 	{
 		#region Public Methods
 		/// <summary>

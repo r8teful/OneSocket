@@ -15,7 +15,11 @@ public class JumpScare : StaticInstance<JumpScare> {
     public void Scare() {
         _Hand1.SetActive(true);
         _Hand2.SetActive(true);
-        //_animator.SetTrigger("JumpScareEvent");
-        //_aaa.Play();
+
+#if UNITY_EDITOR
+        return;
+#endif
+        _animator.SetTrigger("JumpScareEvent");
+        _aaa.Play();
     }
 }

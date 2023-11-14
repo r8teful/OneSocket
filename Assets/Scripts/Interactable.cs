@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 // By using the protected abstract combination, we are creating a contract that enforces the implementation

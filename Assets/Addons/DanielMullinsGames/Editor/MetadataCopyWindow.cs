@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 using UnityEditor;
-using System.Collections;
 using System.IO;
 
-namespace DanielMullinsGames
-{
+namespace DanielMullinsGames {
     public class MetadataCopyWindow : EditorWindow
     {
         const string GUID_TAG = "guid: ";

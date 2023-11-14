@@ -8,15 +8,12 @@
 /// </summary>
 
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using System;
-using Pixelplacement;
 using UnityEngine.UI;
 
-namespace Pixelplacement
-{
-	public class Tween
+namespace Pixelplacement {
+    public class Tween
 	{
 		/// <summary>
 		/// Used internally to identify the type of tween to carry out.

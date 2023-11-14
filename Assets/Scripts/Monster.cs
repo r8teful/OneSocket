@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -76,16 +75,9 @@ public class Monster : StaticInstance<Monster> {
         // Jumpscare!
         Debug.Log("BOO. YOU DIED");
         if (!_dead) {
-            JumpScare.Instance.Scare();
             _dead = true;
-            StartCoroutine(Lose());
-            
+            GameManager.Instance.GameLose();
         }
-    }
-    private IEnumerator Lose() {
-        yield return new WaitForSeconds(4f);
-        GameManager.Instance.GameLose();
-        //GameManager.Instance.GameLose = true;
     }
 
     public void Scare() {

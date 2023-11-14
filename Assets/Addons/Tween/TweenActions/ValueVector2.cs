@@ -6,11 +6,9 @@
 
 using UnityEngine;
 using System;
-using Pixelplacement;
 
-namespace Pixelplacement.TweenSystem
-{
-	class ValueVector2 : TweenBase
+namespace Pixelplacement.TweenSystem {
+    class ValueVector2 : TweenBase
 	{
 		#region Public Properties
 		public Vector2 EndValue {get; private set;}

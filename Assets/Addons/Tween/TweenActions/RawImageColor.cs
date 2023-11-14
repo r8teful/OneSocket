@@ -7,11 +7,9 @@
 using UnityEngine;
 using System;
 using UnityEngine.UI;
-using Pixelplacement;
 
-namespace Pixelplacement.TweenSystem
-{
-	class RawImageColor : TweenBase
+namespace Pixelplacement.TweenSystem {
+    class RawImageColor : TweenBase
 	{
 		#region Public Properties
 		public Color EndValue {get; private set;}
