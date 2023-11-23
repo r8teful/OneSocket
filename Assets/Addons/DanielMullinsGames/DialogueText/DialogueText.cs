@@ -84,39 +84,20 @@ public class DialogueText : MonoBehaviour
         uiText.text = unformattedMessage;
         Canvas.ForceUpdateCanvases();
 
-        int index = 0;
-        foreach (var pair in CustomUI.GetTextLetterPositions(uiText,-2))
+        foreach (var pair in CustomUI.GetTextLetterPositions(uiText,-1))
         {
-            spawnedLetters.Add(SpawnLetter(pair.Value, pair.Key, index));
-            index++;
+            spawnedLetters.Add(SpawnLetter(pair.Value, pair.Key));
         }
         HideAllLetters();
 
         uiText.text = "";
     }
 
-    private Text SpawnLetter(char c, Vector3 pos, int index) {
-        RectTransform uiTextRect = uiText.GetComponent<RectTransform>();
+    private Text SpawnLetter(char c, Vector3 pos) {
 
-
-        Vector2 position = uiTextRect.anchoredPosition; // anchor has to be in the CENTRE
         pos.x = Mathf.Round(pos.x * 100) / 100;
 
-        // fixed bug for , and ' characters being rounded to the wrong number 
-        if (c.Equals(',') || c.Equals('\'') || c.Equals('’')) {
-            pos.y = _prevTextPos; 
-        }
         _prevTextPos = pos.y;
-        pos.y = Mathf.Round(pos.y/ 50) * 50;
-        
-        // pos.y = transform.position.y;
-        //pos.x = Mathf.Round(pos.x * 100) / 100;
-        // pos.y = PixelText.transform.TransformPoint(position).y;
-        //if (!uiTextRect.rect.Contains(pos)) {
-        //    // Move the quad center position to the next line
-        //    pos.x = uiTextRect.rect.xMin;
-        //    pos.y -= uiText.fontSize;
-        //}
 
         var obj = new GameObject(c.ToString());
         obj.transform.SetParent(uiText.transform.parent);

@@ -1153,6 +1153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8098f583b103938498ebfeb08f85ec2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isFadeIn: 0
 --- !u!1 &95496332
 GameObject:
   m_ObjectHideFlags: 0
@@ -4694,8 +4695,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 349}
-  m_SizeDelta: {x: 1438.9368, y: 317.02026}
+  m_AnchoredPosition: {x: 0, y: 266.94}
+  m_SizeDelta: {x: 1700, y: 320}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &609882788
 MonoBehaviour:
@@ -4724,12 +4725,12 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 4
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 1.8
   m_Text: 
 --- !u!222 &609882789
 CanvasRenderer:
@@ -10493,8 +10494,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b6b2476babdebb41b3ce08ca6e4100c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugDontStartIntro: 1
-  debugNoMonster: 0
+  debugDontStartIntro: 0
+  debugNoMonster: 1
   debugWinGame: 0
   debugLoseGame: 0
   _introSequencer: {fileID: 1721202697}
