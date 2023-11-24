@@ -89,5 +89,12 @@ public class SceneHandler : PersistentSingleton<SceneHandler> {
         if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.L)) {
             GameManager.Instance.GameLose();
         }
+
+        ClickArea[] clickAreas = FindObjectsOfType<ClickArea>();
+
+        foreach (ClickArea clickArea in clickAreas) {
+            if (clickArea.gameObject.GetComponent<DrawBoxcollider>() != null) return;
+            clickArea.gameObject.AddComponent<DrawBoxcollider>();
+        }
     }
 }

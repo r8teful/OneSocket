@@ -5,10 +5,12 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour {
     protected virtual void OnMouseEnter(){
+        Debug.Log("Enter" + gameObject.name);
         CursorManager.Instance.SetCursorClickable();
     }
 
     protected virtual void OnMouseExit() {
+        Debug.Log("Exit" + gameObject.name);
         CursorManager.Instance.SetCursorDefault();
     }
 

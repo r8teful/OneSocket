@@ -12,9 +12,7 @@ public class AlphaLerp : MonoBehaviour {
     private void OnEnable() {
         rawImage = GetComponent<RawImage>();
     }
-    private void Update() {
-        Debug.Log(rawImage.color.a);
-    }
+
     public IEnumerator Fade(bool BlackToNothing, float duration = 2.5f) {
         float startAlpha = BlackToNothing ? 1f : 0f;
         float endAlpha = BlackToNothing ? 0f : 1f;
