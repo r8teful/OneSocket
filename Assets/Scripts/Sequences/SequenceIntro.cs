@@ -8,7 +8,7 @@ public class SequenceIntro : Sequencer {
 
     protected override IEnumerator Sequence() {
         Debug.Log("Starded intro sequence");
-        if (ProgressionManager.Instance.CompletedTutorial) {
+        if (ProgressionManager.Instance.CompletedTutorial==1) {
             yield break;
         }
         //  set interactions off for plugs
@@ -17,7 +17,7 @@ public class SequenceIntro : Sequencer {
         foreach (ClickArea clickArea in clickAreas) {
             clickArea.SetInteraction(false);
         }
-        GameManager.Instance.DisableMonster();
+        GameManager.Instance.SetMonster(false);
         _socketLight.SetActive(false);
         _phoneLight.SetActive(false);
         yield return new WaitForSeconds(3);

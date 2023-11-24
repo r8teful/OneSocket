@@ -1,3 +1,4 @@
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class GameManager : StaticInstance<GameManager> {
@@ -13,6 +14,8 @@ public class GameManager : StaticInstance<GameManager> {
     [SerializeField] private GameObject _monster;
 
     [SerializeField] private Phone _phone;
+    [SerializeField] private Clock _clock;
+    [SerializeField] private Speaker _speaker;
     [SerializeField] private int[] _code;
     
  
@@ -67,6 +70,14 @@ public class GameManager : StaticInstance<GameManager> {
         return _phone.PhoneCallStateNow;
     }
 
+    public void ResetClockTime() {
+        _clock.ResetTimer();
+    }
+
+    public void SetSpeakerCharge(int n) {
+        _speaker.Charges = n;
+    }
+    
     public void GameWin() {
         _winSequencer.SetActive(true);
     }
@@ -77,10 +88,7 @@ public class GameManager : StaticInstance<GameManager> {
     public int GetCurrentCode() {
         return Code[_phone.CurrentCodePosition];
     }
-    public void DisableMonster() {
-        _monster.SetActive(false);
-    }
-    public void EnableMonster() {
-        _monster.SetActive(true);
+    public void SetMonster(bool n) {
+        _monster.SetActive(n);
     }
 }

@@ -4,15 +4,23 @@ using UnityEngine;
 public class Speaker : PlugDevice {
     [SerializeField] private TextMeshProUGUI _chargesText;
     [SerializeField] private AudioSource _audioSource;
-    private int _charges = 3;
+
+    private int _charges;
+    public int Charges {
+        get { return _charges; }
+        set { _charges = value;
+            _chargesText.text = Charges.ToString();
+        }
+    }
+    private void Start() {
+        _charges = 3;
+    }
 
     protected override void OnActivate() {
-        if (_charges <= 0) return;
+        if (Charges <= 0) return;
         _audioSource.Play();
-        
         if(Monster.Instance!=null) Monster.Instance.Scare();
-        _charges--;
-        _chargesText.text=_charges.ToString();
+        Charges--;
         base.OnActivate();
     }
 

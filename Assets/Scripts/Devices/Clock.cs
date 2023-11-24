@@ -62,6 +62,7 @@ public class Clock : PlugDevice {
     }
 
     private void NotifyPhoneCall(float time) {
+        if (ProgressionManager.Instance.CompletedTutorial==0) return;
         for (int i = 0; i < _phoneTimes.Length; i++) {
             if (time >= _phoneTimes[i] && !_phoneNotified[i]) {
                 _connectedPhone.SetSoundClipCodeOrder(i);
@@ -71,5 +72,7 @@ public class Clock : PlugDevice {
         }
     }
 
-    //public bool GetHasPower() => _hasPower;
+    public void ResetTimer() {
+        currentTime = 0.0f;
+    }
 }

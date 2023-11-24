@@ -30,7 +30,7 @@ public class DialogueText : MonoBehaviour
     private float _prevTextPos;
     private const float DEFAULT_FREQUENCY = 7.5f;
 #if UNITY_EDITOR
-    private const float DIALOGUE_SPEED = 0.25f;
+    private const float DIALOGUE_SPEED = 0.1f;
     //private const float DIALOGUE_SPEED = 1f;
 #else
     private const float DIALOGUE_SPEED = 1f;

@@ -7,14 +7,14 @@ public class SequenceTutorial : Sequencer {
     [SerializeField] private GameObject _phoneLight;
     private ClickArea[] _clickAreas;
     protected override IEnumerator Sequence() {
-        if (ProgressionManager.Instance.CompletedTutorial) {
+        if (ProgressionManager.Instance.CompletedTutorial==1) {
             yield break;
         }
         _clickAreas = FindObjectsOfType<ClickArea>();
         foreach (ClickArea clickArea in _clickAreas) {
             clickArea.SetInteraction(false);
         }
-        GameManager.Instance.DisableMonster();
+        GameManager.Instance.SetMonster(false);
         _socketLight.SetActive(false);
         _phoneLight.SetActive(true);
 
@@ -116,6 +116,6 @@ public class SequenceTutorial : Sequencer {
         GameManager.Instance.PhoneOnHolder();
 
         // Mark tutorial complete
-        ProgressionManager.Instance.CompletedTutorial = true;
+        ProgressionManager.Instance.CompletedTutorial = 1;
     }
 }

@@ -4730,7 +4730,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.8
+    m_LineSpacing: 1
   m_Text: 
 --- !u!222 &609882789
 CanvasRenderer:
@@ -10503,6 +10503,8 @@ MonoBehaviour:
   _loseSequencer: {fileID: 722644961}
   _monster: {fileID: 867455286}
   _phone: {fileID: 606075454}
+  _clock: {fileID: 288382207}
+  _speaker: {fileID: 1945293304}
   _code: 
 --- !u!4 &1402288324
 Transform:
