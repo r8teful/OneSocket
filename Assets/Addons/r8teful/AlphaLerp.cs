@@ -3,19 +3,21 @@ using UnityEngine;
 using UnityEngine.UI;
 public class AlphaLerp : MonoBehaviour {
     private RawImage rawImage;
-    [SerializeField] private bool _isFadeIn;
+    [SerializeField] private bool _blackToNothing;
 
     void Start() {
         rawImage = GetComponent<RawImage>();
-        rawImage.color = new Color(rawImage.color.r, rawImage.color.g, rawImage.color.b, _isFadeIn ? 1f : 0f);
+        rawImage.color = new Color(rawImage.color.r, rawImage.color.g, rawImage.color.b, _blackToNothing ? 1f : 0f);
     }
     private void OnEnable() {
         rawImage = GetComponent<RawImage>();
     }
-
-    public IEnumerator Fade(bool fadeIn, float duration=2.5f) {
-        float startAlpha = fadeIn ? 1f : 0f;
-        float endAlpha = fadeIn ? 0f : 1f;
+    private void Update() {
+        Debug.Log(rawImage.color.a);
+    }
+    public IEnumerator Fade(bool BlackToNothing, float duration = 2.5f) {
+        float startAlpha = BlackToNothing ? 1f : 0f;
+        float endAlpha = BlackToNothing ? 0f : 1f;
         rawImage.color = new Color(rawImage.color.r, rawImage.color.g, rawImage.color.b, startAlpha);
         float elapsedTime = 0f;
 

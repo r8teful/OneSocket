@@ -84,7 +84,7 @@ public class DialogueText : MonoBehaviour
         uiText.text = unformattedMessage;
         Canvas.ForceUpdateCanvases();
 
-        foreach (var pair in CustomUI.GetTextLetterPositions(uiText,-1))
+        foreach (var pair in CustomUI.GetTextLetterPositions(uiText,0.5f))
         {
             spawnedLetters.Add(SpawnLetter(pair.Value, pair.Key));
         }

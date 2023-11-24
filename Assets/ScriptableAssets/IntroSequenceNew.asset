@@ -15,6 +15,6 @@ MonoBehaviour:
   interruptBehaviour: 2
   lines:
   - Hello?[w:1] Can you hear me? [w:1]
-  - Thank you for your participation, [w:0.5] as you have probably read on the consent
+  - Thank you for your participation, [w:0.5]as you have probably read on the consent
     form, [w:0.5]I can't tell you what this experiment is for [w:1]
   - "Don\u2019t worry,[w:0.5] I will try to help you as best as I can [w:1]"

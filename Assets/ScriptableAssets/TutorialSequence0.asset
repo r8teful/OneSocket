@@ -15,4 +15,4 @@ MonoBehaviour:
   interruptBehaviour: 0
   lines:
   - You can look around by pressing the edges of the screen [w:5]
-  - Please, [w:0.5] click on either edge of the screen with your cursor[w:3]
+  - Please, [w:0.5]click on either edge of the screen with your cursor[w:3]

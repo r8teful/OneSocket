@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LoseMenu : MenuBase {
+public class WinMenu : MenuBase {
     private Button _buttonMainMenu;
+
     protected override void Start() {
         base.Start();
         _buttonMainMenu = GameObject.Find("ButtonMainMenu").GetComponent<Button>();
@@ -13,6 +14,6 @@ public class LoseMenu : MenuBase {
         if (_playButton != null) {
             _playButton.interactable = false;
         }
-        StartCoroutine(SceneHandler.Instance.FadeOutAndLoadScene(this, 0));
+        StartCoroutine(SceneHandler.Instance.FadeOutAndLoadScene(this,0));
     }
 }

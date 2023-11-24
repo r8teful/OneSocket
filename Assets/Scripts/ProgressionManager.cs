@@ -18,8 +18,10 @@ public class ProgressionManager : PersistentSingleton<ProgressionManager> {
         _completedTutorial = PlayerPrefs.GetInt("Tutorial");    
     }
 
+#if UNITY_EDITOR
     [Button("Clear PlayerPrefs")]
     public void ClearPlayerPrefs() {
         PlayerPrefs.DeleteAll();
     }
+#endif
 }

@@ -61,6 +61,13 @@ public class AudioController : PersistentSingleton<AudioController> {
     {
         return loopSources[index];
     }
+    public bool IsLoopPlaying(string loopName, int sourceIndex = 0) {
+        if (sourceIndex >= 0 && sourceIndex < loopSources.Count) {
+            AudioSource loopSource = loopSources[sourceIndex];
+            return loopSource.isPlaying && loopSource.clip != null && loopSource.clip.name == loopName;
+        }
+        return false;
+    }
 
     private float GetVolumeFromOptions(int volume, int maxVolume)
     {

@@ -3,11 +3,12 @@ using UnityEngine;
 
 public class GameManager : StaticInstance<GameManager> {
 
-
+#if UNITY_EDITOR
     [SerializeField] private bool debugDontStartIntro = false;
     [SerializeField] private bool debugNoMonster = false;
     [SerializeField] private bool debugWinGame = false;
     [SerializeField] private bool debugLoseGame = false;
+#endif
     [SerializeField] private GameObject _introSequencer;
     [SerializeField] private GameObject _winSequencer;
     [SerializeField] private GameObject _loseSequencer;

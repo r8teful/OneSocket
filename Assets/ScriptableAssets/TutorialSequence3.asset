@@ -15,4 +15,4 @@ MonoBehaviour:
   interruptBehaviour: 0
   lines:
   - Press and hold on the handle to charge it [w:4]
-  - Please, [w:0.5][t:10]Charge it all the way... [w:1]
+  - Please, [w:0.5][t:10]charge it all the way... [w:1]
